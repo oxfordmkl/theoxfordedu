@@ -1,76 +1,1812 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oxford Computers | Government Approved Study Centre</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="assets/images/logo.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-control" content="no-store">
+    <title>The one Oxford Computers - AI-Powered Education </title>
+    <link rel="icon" type="image/x-icon" href="images/png.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    
+
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --light: #f1f5f9;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Animated Background */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            z-index: -2;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(45deg); }
+        }
+
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(15, 23, 42, 0.95) 100%);
+            z-index: -1;
+        }
+
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            to {
+                transform: translateY(-100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            background: rgba(39, 45, 51, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 15px 5%;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            
+        }
+        .logo img {
+            width: 60px;
+            height: 60px;}
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 5% 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(233, 37, 37, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-secondary {
+            padding: 16px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 100px 5%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .course-card:hover::before {
+            opacity: 1;
+        }
+
+        .course-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-card p {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+
+        .course-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-card .course-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        .read-more-btn {
+            border: 2px solid #007bff;
+            color: #007bff;
+            background: transparent;
+        }
+
+        .read-more-btn:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .join-now-btn {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+        }
+
+        .join-now-btn:hover {
+            background: linear-gradient(45deg, #0056b3, #003b80);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.8) translateY(50px);
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .modal-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .modal-title {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .modal-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .course-details {
+            display: grid;
+            gap: 25px;
+        }
+
+        .detail-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-section h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-section li {
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-section li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .modal-footer {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .modal-btn {
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .modal-btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .modal-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .modal-btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .modal-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 5%;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 5%;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            font-size: 42px;
+            margin-bottom: 16px;
+        }
+
+        .contact-container p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: translateY(-3px);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+       /* Light Mode */
+.light-mode {
+    --dark: #ffffff;
+    --light: #000000;
+    background: #ffffff;
+    color: #000;
+}
+
+.light-mode nav {
+    background: rgba(255,255,255,0.9);
+}
+
+.light-mode .contact-container,
+.light-mode .course-card {
+    background: rgba(0,0,0,0.05);
+    color: #000;
+}
+
+.light-mode .social-links a {
+    background: rgba(0,0,0,0.1);
+    color: #000;
+}
+
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links, .cta-btn {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                padding: 40px 20px;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+
+            .modal-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .modal-title {
+                font-size: 24px;
+            }
+
+            .course-buttons {
+                flex-direction: column;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        #preloader.fade-out {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            opacity: 0;
+        }
+
+        .intro-content {
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        .intro-content h1 {
+            font-size: 80px;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 0.15em;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+            animation: introZoom 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            transform-origin: center;
+        }
+
+        .intro-content .letter {
+            display: inline-block;
+            animation: letterReveal .8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+            transform: scale(0) rotateY(-90deg);
+        }
+
+        @keyframes introZoom {
+            0% {
+                transform: scale(0.5) rotateX(10deg);
+                opacity: 0;
+                filter: blur(10px);
+            }
+            40% {
+                transform: scale(1.1) rotateX(0deg);
+                opacity: 1;
+                filter: blur(0);
+            }
+            100% {
+                transform: scale(15) rotateX(-5deg);
+                opacity: 0;
+                filter: blur(15px);
+            }
+        }
+
+        @keyframes letterReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotateY(-90deg) translateZ(-50px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotateY(0deg) translateZ(0);
+            }
+        }
+
+        /* Main content hidden initially */
+        #main-content {
+            opacity: 0;
+            transform: scale(0.45);
+            transition: opacity 1s ease 0.5s, transform 0.5s ease 0.5s;
+        }
+
+        body.loaded #main-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Wipe effect overlay */
+        .wipe-overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #c740b5, #764ba2);
+            z-index: 9999;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            transition: clip-path .8s cubic-bezier(0.77, 0, 0.1, 1);
+            pointer-events: none;
+        }
+
+        .wipe-overlay.active {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+
+        @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        background: rgba(15, 23, 42, 0.95);
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 16px;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+}
+
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <img src="assets/images/logo.png" alt="Oxford Computers Logo" class="logo" />
-      <nav>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="intro-content">
+            <h1 id="introText">THE OXFORD</h1>
+        </div>
+    </div>
+
+    <!-- Wipe Overlay -->
+    <div class="wipe-overlay"></div>
+
+    <!-- Course Details Modal -->
+    <div class="modal-overlay" id="courseModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon">📘</div>
+                <div>
+                    <h2 class="modal-title" id="modalTitle">Course Title</h2>
+                </div>
+            </div>
+            <p class="modal-description" id="modalDescription">Course description will appear here.</p>
+            
+            <div class="course-details" id="courseDetails">
+                <!-- Course details will be populated by JavaScript -->
+            </div>
+            
+            <div class="modal-footer">
+                <a href="https://wa.me/919447329972" class="modal-btn modal-btn-primary">
+                    <i class="fab fa-whatsapp"></i> Enroll Now
+                </a>
+                <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div class="bg-gradient"></div>
+        <div class="bg-overlay"></div>
+        
+
+        <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            <img src="images/png.ico" alt="The Oxford Logo">
+            The Oxford
+        </div>
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="courses.html">Our Courses</a></li>
-          <li><a href="contact.html">Contact</a></li>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
-      <button class="menu-toggle">☰</button>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to Oxford Computers</h1>
-      <p>A Government Approved Study Centre under Kerala State Rutronix</p>
-      <a href="courses.html" class="btn">Explore Courses</a>
-    </div>
-  </section>
-
-  <section class="courses-preview">
-    <div class="container">
-      <h2>Popular Courses</h2>
-      <div class="courses-grid">
-        <div class="course-card">
-          <h3>AIDM</h3>
-          <p>AI-Driven Digital Marketing</p>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+            <button class="cta-btn">Get Started</button>
         </div>
-        <div class="course-card">
-          <h3>PGDCA</h3>
-          <p>Post Graduate Diploma in Computer Applications</p>
-        </div>
-        <div class="course-card">
-          <h3>DCA</h3>
-          <p>Diploma in Computer Applications</p>
-        </div>
-        <div class="course-card">
-          <h3>Python</h3>
-          <p>Web Development & Programming</p>
-        </div>
-      </div>
-      <a href="courses.html" class="btn-outline">View All Courses</a>
-    </div>
-  </section>
+       
+    </nav>
 
-  <section class="about-section">
-    <div class="container">
-      <h2>About Oxford Computers</h2>
-      <p>We are a leading computer education center providing industry-ready training for government and private sector opportunities. With a legacy of trust, Oxford Computers is a Government Authorized Centre under Kerala State Rutronix.</p>
-      <a href="about.html" class="btn">Learn More</a>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">✨ Admissions Open 2025</div>
+            <h1>Transform Your Future with AI-Powered Education</h1>
+            <p>Master cutting-edge skills in AI, Digital Marketing, Programming, and more. Join thousands of students building successful careers with The Oxford Computers.</p>
+            <div class="hero-buttons">
+                <a href="#courses" class="btn-primary">Explore Courses</a>
+                <a href="#contact" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <div class="container footer-content">
-      <p>© 2025 Oxford Computers. All Rights Reserved.</p>
-      <p>📞 WhatsApp: <a href="https://wa.me/9447329972">9447329972</a> | 🌐 <a href="https://oxfordcomputers.org">oxfordcomputers.org</a> | ✉️ mkloxford@gmail.com</p>
-    </div>
-  </footer>
+    <!-- Courses Section -->
+    <section class="courses-section reveal" id="courses">
+        <div class="section-header">
+            <div class="section-badge">OUR PROGRAMS</div>
+            <h2>Industry-Leading Courses</h2>
+            <p>Choose from our comprehensive range of professional courses designed for today's digital economy</p>
+        </div>
 
-  <script src="assets/js/main.js"></script>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-icon">📘</div>
+                <h3>PGDCA</h3>
+                <p>A comprehensive one‑year program designed to build strong foundations in computer applications.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('pgdca')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">💻</div>
+                <h3>DCA Program</h3>
+                <p>Comprehensive Diploma in Computer Applications covering MS Office, Tally, and essential programming skills.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('dca')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📊</div>
+                <h3>Data Entry</h3>
+                <p>Professional data entry training with focus on speed, accuracy, and industry-standard tools.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('dataentry')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📈</div>
+                <h3>Accounting</h3>
+                <p>Learn modern accounting practices, taxation, and financial management with hands-on training.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('accounting')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">🐍</div>
+                <h3>Python Programming</h3>
+                <p>From basics to advanced Python development, including data science and automation.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('python')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">🎨</div>
+                <h3>Web Designing</h3>
+                <p>Create stunning, responsive websites using HTML, CSS, JavaScript, and modern frameworks.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('webdesign')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📙</div>
+                <h3>CTTC</h3>
+                <p>A professional accounting program focused on modern business requirements.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('cttc')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📗</div>
+                <h3>CPTTC</h3>
+                <p>A course designed to prepare students for teaching computer subjects in institutes.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('cpttc')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📙</div>
+                <h3>PDCFA</h3>
+                <p>Professional Diploma in Computerized Financial Accounting</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('pdcfa')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📘</div>
+                <h3>PDDTP</h3>
+                <p>Learn designing tools used in media, advertising & printing.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('pddtp')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📕</div>
+                <h3>DCBAT</h3>
+                <p>Diploma in Computer Basics & Accounting with Tally</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" onclick="openModal('dcbat')">Read More</button>
+                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section reveal" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Empowering Students Since Years</h2>
+                <p>The Oxford Computers is committed to providing world-class education and fostering a supportive learning environment. Our experienced faculty and comprehensive curriculum are designed to prepare students for success in their chosen fields.</p>
+                <p>We combine traditional teaching excellence with cutting-edge technology to deliver education that matters in today's fast-paced digital world.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Placement Rate</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Expert Trainers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section reveal" id="contact">
+        <div class="contact-container">
+            <h2>Let's Get Started</h2>
+            <p>Ready to transform your career? Get in touch with us today</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <a href="mailto:mkloxford@gmail.com">mkloxford@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <a href="tel:+919447329972">+91 9447329972</a>
+                </div>
+            </div>
+            <button class="btn-primary" style="margin-top: 40px;"
+               onclick="window.location.href='https://wa.me/919447329972';">
+                Contact Us on WhatsApp
+            </button>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/oxfordtvm" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="https://twitter.com/oxfordcomputers" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="https://www.instagram.com/oxfordmkl" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/the-oxford-computers" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/919447329972" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 The Oxford Computers. All rights reserved.</p>
+    </footer>
+    </div>
+
+    <script>
+        // Course data for modal content
+        const courseData = {
+            pgdca: {
+                icon: '📘',
+                title: 'PGDCA - Post Graduate Diploma in Computer Applications',
+                description: 'A comprehensive one-year program designed to build strong foundations in computer applications, programming, and modern software development.',
+                details: {
+                    duration: '12 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'PGDCA Certificate',
+                    modules: [
+                        'Programming Fundamentals (C, C++, Java)',
+                        'Database Management Systems',
+                        'Web Development (HTML, CSS, JavaScript)',
+                        'Software Engineering Principles',
+                        'Computer Networks & Security',
+                        'Project Management',
+                        'Mobile App Development',
+                        'Final Project & Internship'
+                    ],
+                    career: [
+                        'Software Developer',
+                        'Web Developer',
+                        'Database Administrator',
+                        'System Analyst',
+                        'IT Consultant',
+                        'Project Manager'
+                    ],
+                    prerequisites: 'Graduate in any discipline'
+                }
+            },
+            dca: {
+                icon: '💻',
+                title: 'DCA - Diploma in Computer Applications',
+                description: 'Comprehensive Diploma in Computer Applications covering MS Office, Tally, and essential programming skills for modern workplace requirements.',
+                details: {
+                    duration: '6 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'DCA Certificate',
+                    modules: [
+                        'Computer Fundamentals',
+                        'MS Office Suite (Word, Excel, PowerPoint)',
+                        'Internet & Email Management',
+                        'Tally ERP 9 / Prime',
+                        'Basic Programming Concepts',
+                        'Digital Marketing Basics',
+                        'Data Entry & Typing Skills',
+                        'Practical Projects'
+                    ],
+                    career: [
+                        'Computer Operator',
+                        'Data Entry Operator',
+                        'Office Assistant',
+                        'Accounts Assistant',
+                        'Digital Marketing Assistant',
+                        'Administrative Executive'
+                    ],
+                    prerequisites: '10+2 or equivalent'
+                }
+            },
+            dataentry: {
+                icon: '📊',
+                title: 'Data Entry Professional Course',
+                description: 'Professional data entry training with focus on speed, accuracy, and industry-standard tools for various data processing tasks.',
+                details: {
+                    duration: '3 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'Data Entry Professional Certificate',
+                    modules: [
+                        'Typing Speed Development (40+ WPM)',
+                        'MS Excel Advanced Features',
+                        'Data Validation & Cleaning',
+                        'Online Form Filling',
+                        'Database Entry Systems',
+                        'Quality Control Measures',
+                        'Time Management Techniques',
+                        'Industry Best Practices'
+                    ],
+                    career: [
+                        'Data Entry Operator',
+                        'Data Processing Executive',
+                        'Form Filling Specialist',
+                        'Database Administrator',
+                        'Content Entry Specialist',
+                        'Freelance Data Entry Professional'
+                    ],
+                    prerequisites: 'Basic computer knowledge'
+                }
+            },
+            accounting: {
+                icon: '📈',
+                title: 'Professional Accounting Course',
+                description: 'Learn modern accounting practices, taxation, and financial management with hands-on training in industry-standard software.',
+                details: {
+                    duration: '4 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'Professional Accounting Certificate',
+                    modules: [
+                        'Fundamentals of Accounting',
+                        'Tally ERP 9 / Prime',
+                        'GST & Tax Management',
+                        'Financial Statement Preparation',
+                        'Inventory Management',
+                        'Payroll Processing',
+                        'Banking & Reconciliation',
+                        'Practical Case Studies'
+                    ],
+                    career: [
+                        'Accounts Executive',
+                        'Bookkeeper',
+                        'Tax Consultant',
+                        'Financial Analyst',
+                        'Audit Assistant',
+                        'Freelance Accountant'
+                    ],
+                    prerequisites: 'Basic mathematics knowledge'
+                }
+            },
+            python: {
+                icon: '🐍',
+                title: 'Python Programming Mastery',
+                description: 'From basics to advanced Python development, including data science, web development, and automation scripting.',
+                details: {
+                    duration: '6 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'Python Programming Certificate',
+                    modules: [
+                        'Python Fundamentals & Syntax',
+                        'Object-Oriented Programming',
+                        'Data Structures & Algorithms',
+                        'Web Development with Django/Flask',
+                        'Data Science with Pandas & NumPy',
+                        'Database Integration (MySQL, MongoDB)',
+                        'API Development & Integration',
+                        'Real-world Projects'
+                    ],
+                    career: [
+                        'Python Developer',
+                        'Data Scientist',
+                        'Web Developer',
+                        'Automation Engineer',
+                        'Backend Developer',
+                        'Machine Learning Engineer'
+                    ],
+                    prerequisites: 'Basic programming knowledge preferred'
+                }
+            },
+            webdesign: {
+                icon: '🎨',
+                title: 'Web Design & Development',
+                description: 'Create stunning, responsive websites using HTML, CSS, JavaScript, and modern frameworks with industry best practices.',
+                details: {
+                    duration: '5 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'Web Design & Development Certificate',
+                    modules: [
+                        'HTML5 & CSS3 Fundamentals',
+                        'Responsive Web Design',
+                        'JavaScript & jQuery',
+                        'Bootstrap Framework',
+                        'WordPress Development',
+                        'UI/UX Design Principles',
+                        'SEO Optimization',
+                        'Portfolio Development'
+                    ],
+                    career: [
+                        'Web Designer',
+                        'Frontend Developer',
+                        'UI/UX Designer',
+                        'WordPress Developer',
+                        'Freelance Web Developer',
+                        'Digital Marketing Specialist'
+                    ],
+                    prerequisites: 'Basic computer knowledge'
+                }
+            },
+            cttc: {
+                icon: '📙',
+                title: 'CTTC - Certificate in Trade & Technology',
+                description: 'A professional accounting program focused on modern business requirements and trade practices.',
+                details: {
+                    duration: '6 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'CTTC Certificate',
+                    modules: [
+                        'Business Fundamentals',
+                        'Trade Practices',
+                        'Technology in Business',
+                        'Financial Management',
+                        'Digital Documentation',
+                        'Communication Skills',
+                        'Project Management',
+                        'Industry Exposure'
+                    ],
+                    career: [
+                        'Business Executive',
+                        'Trade Assistant',
+                        'Administrative Officer',
+                        'Customer Service Executive',
+                        'Sales Coordinator',
+                        'Business Analyst'
+                    ],
+                    prerequisites: '10+2 or equivalent'
+                }
+            },
+            cpttc: {
+                icon: '📗',
+                title: 'CPTTC - Computer Programming & Teaching',
+                description: 'A specialized course designed to prepare students for teaching computer subjects in educational institutes.',
+                details: {
+                    duration: '8 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'CPTTC Certificate',
+                    modules: [
+                        'Programming Languages (C, C++, Java)',
+                        'Teaching Methodologies',
+                        'Curriculum Development',
+                        'Educational Technology',
+                        'Assessment Techniques',
+                        'Classroom Management',
+                        'Practical Teaching Sessions',
+                        'Research & Development'
+                    ],
+                    career: [
+                        'Computer Teacher',
+                        'Programming Instructor',
+                        'Training Coordinator',
+                        'Educational Content Developer',
+                        'Technical Trainer',
+                        'Curriculum Designer'
+                    ],
+                    prerequisites: 'Graduate with computer background'
+                }
+            },
+            pdcfa: {
+                icon: '📙',
+                title: 'PDCFA - Professional Diploma in Computerized Financial Accounting',
+                description: 'Advanced financial accounting course with computerized systems and modern accounting practices.',
+                details: {
+                    duration: '6 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'PDCFA Certificate',
+                    modules: [
+                        'Advanced Accounting Principles',
+                        'Computerized Accounting Systems',
+                        'Financial Analysis & Reporting',
+                        'Tax Planning & Management',
+                        'Audit & Compliance',
+                        'ERP Systems',
+                        'Cost Accounting',
+                        'Practical Case Studies'
+                    ],
+                    career: [
+                        'Senior Accountant',
+                        'Financial Analyst',
+                        'Tax Consultant',
+                        'Audit Executive',
+                        'Finance Manager',
+                        'Independent Practitioner'
+                    ],
+                    prerequisites: 'Basic accounting knowledge'
+                }
+            },
+            pddtp: {
+                icon: '📘',
+                title: 'PDDTP - Professional Diploma in Desktop Publishing',
+                description: 'Learn professional designing tools used in media, advertising, and printing industries.',
+                details: {
+                    duration: '4 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'PDDTP Certificate',
+                    modules: [
+                        'Adobe Photoshop',
+                        'Adobe Illustrator',
+                        'Adobe InDesign',
+                        'CorelDRAW',
+                        'Typography & Layout Design',
+                        'Print Media Design',
+                        'Digital Media Creation',
+                        'Portfolio Development'
+                    ],
+                    career: [
+                        'Graphic Designer',
+                        'Desktop Publisher',
+                        'Print Media Designer',
+                        'Advertising Designer',
+                        'Freelance Designer',
+                        'Creative Executive'
+                    ],
+                    prerequisites: 'Basic computer knowledge'
+                }
+            },
+            dcbat: {
+                icon: '📕',
+                title: 'DCBAT - Diploma in Computer Basics & Accounting with Tally',
+                description: 'Comprehensive course combining computer fundamentals with professional accounting using Tally software.',
+                details: {
+                    duration: '4 Months',
+                    mode: 'Full-time / Part-time',
+                    certification: 'DCBAT Certificate',
+                    modules: [
+                        'Computer Fundamentals',
+                        'MS Office Applications',
+                        'Tally ERP 9 / Prime',
+                        'Basic Accounting Principles',
+                        'GST Implementation',
+                        'Inventory Management',
+                        'Report Generation',
+                        'Practical Training'
+                    ],
+                    career: [
+                        'Accounts Assistant',
+                        'Tally Operator',
+                        'Bookkeeper',
+                        'Data Entry Executive',
+                        'Office Coordinator',
+                        'Small Business Accountant'
+                    ],
+                    prerequisites: 'Basic education (10th pass)'
+                }
+            }
+        };
+
+        // Modal functions
+        function openModal(courseId) {
+            const course = courseData[courseId];
+            if (!course) return;
+
+            // Populate modal content
+            document.getElementById('modalIcon').textContent = course.icon;
+            document.getElementById('modalTitle').textContent = course.title;
+            document.getElementById('modalDescription').textContent = course.description;
+
+            // Create course details HTML
+            const detailsHTML = `
+                <div class="detail-section">
+                    <h4><i class="fas fa-clock"></i> Course Information</h4>
+                    <ul>
+                        <li><strong>Duration:</strong> ${course.details.duration}</li>
+                        <li><strong>Mode:</strong> ${course.details.mode}</li>
+                        <li><strong>Certification:</strong> ${course.details.certification}</li>
+                        <li><strong>Prerequisites:</strong> ${course.details.prerequisites}</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <h4><i class="fas fa-book"></i> Course Modules</h4>
+                    <ul>
+                        ${course.details.modules.map(module => `<li>${module}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        ${course.details.career.map(career => `<li>${career}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            document.getElementById('courseDetails').innerHTML = detailsHTML;
+
+            // Show modal
+            document.getElementById('courseModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('courseModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('courseModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Split text into letters for animation
+        function splitTextIntoLetters(selector) {
+            const element = document.querySelector(selector);
+            if (!element) return;
+            
+            const text = element.textContent;
+            element.textContent = '';
+            
+            text.split('').forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.className = 'letter';
+                span.textContent = letter === ' ' ? '\u00A0' : letter;
+                span.style.animationDelay = (index * 0.08) + 's';
+                element.appendChild(span);
+            });
+        }
+
+        // Preloader logic
+        window.addEventListener('load', function() {
+            splitTextIntoLetters('#introText');
+            
+            const minDisplayTime = 50; // 0.05 seconds
+            const startTime = Date.now();
+            
+            setTimeout(function() {
+                const preloader = document.getElementById('preloader');
+                const wipeOverlay = document.querySelector('.wipe-overlay');
+                
+                // Start the zoom out animation
+                setTimeout(() => {
+                    preloader.classList.add('fade-out');
+                }, 2200);
+                
+                // Trigger wipe effect
+                setTimeout(() => {
+                    wipeOverlay.classList.add('active');
+                    document.body.classList.add('loaded');
+                }, 2500);
+                
+                // Remove preloader from DOM
+                setTimeout(() => {
+                    preloader.remove();
+                }, 3700);
+                
+            }, minDisplayTime);
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const particleCount = 30;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Reveal on scroll
+        function reveal() {
+             const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', reveal);
+        reveal(); // run once on load
+
+        function toggleTheme() {
+    const toggle = document.querySelector('.theme-toggle');
+
+    // toggle light mode class on body
+    document.body.classList.toggle('light-mode');
+
+    // change icon
+    if (document.body.classList.contains('light-mode')) {
+        toggle.textContent = '☀️';   // light mode icon
+        localStorage.setItem('theme', 'light');
+    } else {
+        toggle.textContent = '🌙';   // dark mode icon
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+window.addEventListener('load', () => {
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+});
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Smooth scroll for buttons
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const href = this.getAttribute('onclick');
+                if (href && href.includes('#')) {
+                    e.preventDefault();
+                    const target = href.match(/#\w+/)[0];
+                    const element = document.querySelector(target);
+                    if (element) {
+                        const offsetTop = element.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add smooth momentum scrolling for better feel
+        let scrollTimeout;
+        window.addEventListener('wheel', function(e) {
+            clearTimeout(scrollTimeout);
+            document.body.style.scrollBehavior = 'smooth';
+            scrollTimeout = setTimeout(function() {
+                document.body.style.scrollBehavior = 'smooth';
+            }, 100);
+        }, { passive: true });
+
+        // prevent automatic scroll restoration to anchor / keep at top
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('load', () => {
+  // remove any hash fragment so browser won't jump
+  if (location.hash === '#courses') history.replaceState(null, '', location.pathname + location.search);
+  // scroll to top explicitly
+  window.scrollTo(0, 0);
+});
+    </script>
 </body>
 </html>
