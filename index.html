@@ -174,6 +174,10 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
         }
+        #ctaAnim { overflow: hidden; position: relative; padding: 12px 28px; }
+#ctaAnim .text-xl { font-size: 1.1rem; margin: 0; display: inline-block; color: currentColor; letter-spacing: 0.06em; }
+#ctaAnim .text-xl .char { display: inline-block; transform: translateY(0); transition: transform 0.45s cubic-bezier(.22,.9,.32,1); }
+
 
         /* Hero Section */
         .hero {
@@ -1043,7 +1047,9 @@
         </ul>
         <div style="display: flex; gap: 15px; align-items: center;">
             <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
-            <button class="cta-btn">Get Started</button>
+            <button class="cta-btn" id="ctaAnim">
+                <h2 class="text-xl" aria-hidden="true">Get Started</h2>
+            </button>
         </div>
        
     </nav>
@@ -1076,7 +1082,7 @@
                 <p>A comprehensive one‑year program designed to build strong foundations in computer applications.</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('pgdca')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank"  class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1086,7 +1092,7 @@
                 <p>Comprehensive Diploma in Computer Applications covering MS Office, Tally, and essential programming skills.</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('dca')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1096,7 +1102,7 @@
                 <p>Professional data entry training with focus on speed, accuracy, and industry-standard tools.</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('dataentry')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1106,7 +1112,7 @@
                 <p>Learn modern accounting practices, taxation, and financial management with hands-on training.</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('accounting')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1116,7 +1122,7 @@
                 <p>From basics to advanced Python development, including data science and automation.</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('python')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1126,7 +1132,7 @@
                 <p>Create stunning, responsive websites using HTML, CSS, JavaScript, and modern frameworks.</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('webdesign')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1136,7 +1142,7 @@
                 <p>A professional accounting program focused on modern business requirements.</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('cttc')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1146,7 +1152,7 @@
                 <p>A course designed to prepare students for teaching computer subjects in institutes.</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('cpttc')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1156,7 +1162,7 @@
                 <p>Professional Diploma in Computerized Financial Accounting</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('pdcfa')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1166,7 +1172,7 @@
                 <p>Learn designing tools used in media, advertising & printing.</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('pddtp')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1176,7 +1182,7 @@
                 <p>Diploma in Computer Basics & Accounting with Tally</p>
                 <div class="course-buttons">
                     <button class="course-btn read-more-btn" onclick="openModal('dcbat')">Read More</button>
-                    <a href="https://wa.me/919447329972" class="course-btn join-now-btn">Join Now</a>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
 
@@ -1807,6 +1813,51 @@ window.addEventListener('load', () => {
   // scroll to top explicitly
   window.scrollTo(0, 0);
 });
+
+
+
+ function splitToChars(el) {
+    const text = el.textContent.trim();
+    el.textContent = '';
+    for (let i = 0; i < text.length; i++) {
+      const span = document.createElement('span');
+      span.className = 'char';
+      span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+      span.style.transitionDelay = (i * 30) + 'ms';
+      el.appendChild(span);
+    }
+  }
+
+  (function() {
+    const heading = document.querySelector('#ctaAnim .text-xl');
+    if (!heading) return;
+    splitToChars(heading);
+    const chars = heading.querySelectorAll('.char');
+
+    // initial entrance
+    chars.forEach((c, i) => {
+      c.style.transform = 'translateY(30px)';
+      setTimeout(() => c.style.transform = 'translateY(0)', i * 35);
+    });
+
+    // hover bounce
+    const bounce = () => {
+      chars.forEach((c, i) => {
+        setTimeout(() => c.style.transform = 'translateY(-44px)', i * 25);
+      });
+      // return with staggered bounce
+      setTimeout(() => {
+        chars.forEach((c, i) => {
+          setTimeout(() => c.style.transform = 'translateY(0)', i * 35);
+        });
+      }, 350);
+    };
+
+    const cta = document.getElementById('ctaAnim');
+    cta.addEventListener('mouseenter', bounce);
+    cta.addEventListener('click', bounce);
+    cta.addEventListener('focus', bounce, true);
+  })();
     </script>
 </body>
 </html>
