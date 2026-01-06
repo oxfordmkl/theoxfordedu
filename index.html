@@ -1055,7 +1055,7 @@
             </div>
             
             <div class="modal-footer">
-                <a href="https://wa.me/919447329972" class="modal-btn modal-btn-primary">
+                <a href="https://wa.me/919447329972" target="_blank" class="modal-btn modal-btn-primary">
                     <i class="fab fa-whatsapp"></i> Enroll Now
                 </a>
                 <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Close</button>
@@ -1071,17 +1071,18 @@
         <!-- Navigation -->
     <nav id="navbar">
         <div class="logo">
-            <img src="assets/images/png.ico" alt="The Oxford Logo">
+            <img src="images/png.ico" alt="The Oxford Computers – Best Computer Institute in Trivandrum">
             The Oxford
         </div>
         <ul class="nav-links">
             <li><a href="#hero">Home</a></li>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="course.html">Courses</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#reviews">Reviews</a></li>
         </ul>
         <div style="display: flex; gap: 15px; align-items: center;">
-            <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+            
             <button class="cta-btn" id="ctaAnim">
                 <h2 class="text-xl" aria-hidden="true">Get Started</h2>
             </button>
@@ -1092,12 +1093,12 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="hero-badge">✨ Admissions Open 2025</div>
-            <h1>Transform Your Future with AI-Powered Education Institute in Trivandrum </h1>
+            <div class="hero-badge">✨ Admissions Open 2025-26</div>
+            <h1>Transform Your Future with AI-Powered Education Institute in Trivandrum</h1>
             <p>Master cutting-edge skills in AI, Digital Marketing, Programming, and more. Join thousands of students building successful careers with The Oxford Computers.</p>
             <div class="hero-buttons">
-                <a href="#courses" class="btn-primary">Explore Courses</a>
-                <a href="#contact" class="btn-secondary">Contact Us</a>
+                <a href="course.html" class="btn-primary">Explore Courses</a>
+                <a href="contact.html" class="btn-secondary">Contact Us</a>
             </div>
         </div>
     </section>
@@ -1106,129 +1107,201 @@
     <section class="courses-section reveal" id="courses">
         <div class="section-header">
             <div class="section-badge">OUR PROGRAMS</div>
-            <h2>Industry-Leading Courses</h2>
+            <h2>Industry-Leading Courses in Kerala </h2>
             <p>Choose from our comprehensive range of professional courses designed for today's digital economy</p>
         </div>
 
-        <div class="courses-grid">
+        <article class="courses-grid">
             <div class="course-card">
                 <div class="course-icon">📘</div>
-                <h3>PGDCA</h3>
+                <h3>PGDCA (Post Graduate Diploma in Computer Applications)</h3>
                 <p>A comprehensive one‑year program designed to build strong foundations in computer applications.</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('pgdca')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('pgdca')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank"  class="course-btn join-now-btn">Join Now</a>
                 </div>
             </div>
+       
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">💻</div>
-                <h3>DCA Program</h3>
+                <h3>DCA Program in Kerala</h3>
                 <p>Comprehensive Diploma in Computer Applications covering MS Office, Tally, and essential programming skills.</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('dca')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('dca')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">📊</div>
-                <h3>Data Entry</h3>
+                <h3>Data Entry Course in Kerala</h3>
                 <p>Professional data entry training with focus on speed, accuracy, and industry-standard tools.</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('dataentry')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('dataentry')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">📈</div>
-                <h3>Accounting</h3>
+                <h3>Accounting Course in Kerala</h3>
                 <p>Learn modern accounting practices, taxation, and financial management with hands-on training.</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('accounting')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('accounting')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">🐍</div>
-                <h3>Python Programming</h3>
+                <h3>Python Programming Course in Kerala</h3>
                 <p>From basics to advanced Python development, including data science and automation.</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('python')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('python')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">🎨</div>
-                <h3>Web Designing</h3>
+                <h3>Web Designing Course in Kerala</h3>
                 <p>Create stunning, responsive websites using HTML, CSS, JavaScript, and modern frameworks.</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('webdesign')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('webdesign')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">📙</div>
-                <h3>CTTC</h3>
+                <h3>CTTC Course in Kerala</h3>
                 <p>A professional accounting program focused on modern business requirements.</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('cttc')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('cttc')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">📗</div>
-                <h3>CPTTC</h3>
+                <h3>CPTTC Course in Kerala</h3>
                 <p>A course designed to prepare students for teaching computer subjects in institutes.</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('cpttc')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('cpttc')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">📙</div>
-                <h3>PDCFA</h3>
+                <h3>PDCFA Course in Kerala</h3>
                 <p>Professional Diploma in Computerized Financial Accounting</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('pdcfa')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('pdcfa')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">📘</div>
-                <h3>PDDTP</h3>
+                <h3>PDDTP Course in Kerala</h3>
                 <p>Learn designing tools used in media, advertising & printing.</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('pddtp')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('pddtp')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="course-card">
+            <article class="course-card">
                 <div class="course-icon">📕</div>
-                <h3>DCBAT</h3>
+                <h3>DCBAT Course in Kerala</h3>
                 <p>Diploma in Computer Basics & Accounting with Tally</p>
                 <div class="course-buttons">
-                    <button class="course-btn read-more-btn" onclick="openModal('dcbat')">Read More</button>
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('dcbat')">Read More</button>
                     <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
                 </div>
-            </div>
+            </article>
 
-        </div>
+        </article>
     </section>
+
+
+
+
+    <!-- Reviews Section -->
+<section class="reviews-section reveal" id="reviews">
+    <div class="section-header">
+        <div class="section-badge">STUDENT REVIEWS</div>
+        <h2>What Our Students Say</h2>
+        <p>Real experiences from students who transformed their careers with us</p>
+    </div>
+
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+                “The Oxford Computers gave me strong practical knowledge. The trainers are very supportive and industry-focused.”
+            </p>
+            <div class="review-user">
+                <div class="avatar">A</div>
+                <div>
+                    <h4>Bibin Thomas</h4>
+                    <span>Full Stack Student</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+                “Best computer institute in Trivandrum. I got placed within 2 months after completing DCA.”
+            </p>
+            <div class="review-user">
+                <div class="avatar">S</div>
+                <div>
+                    <h4>Shyam K</h4>
+                    <span>DCA Graduate</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-stars">★★★★☆</div>
+            <p class="review-text">
+                “Very good teaching style and real-world projects. Highly recommended for Python learners.”
+            </p>
+            <div class="review-user">
+                <div class="avatar">M</div>
+                <div>
+                    <h4>Manu P</h4>
+                    <span>Python Course</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+                “The Oxford Computers gave me strong practical knowledge. The trainers are very supportive and industry-focused.”
+            </p>
+            <div class="review-user">
+                <div class="avatar">A</div>
+                <div>
+                    <h4>Vipin </h4>
+                    <span>Full Stack Student</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- About Section -->
     <section class="about-section reveal" id="about">
         <div class="about-content">
             <div class="about-text">
-                <h2>Empowering Students Since Years</h2>
+                <h2>Empowering Students with Computer Education Since 2008</h2>
                 <p>The Oxford Computers is committed to providing world-class education and fostering a supportive learning environment. Our experienced faculty and comprehensive curriculum are designed to prepare students for success in their chosen fields.</p>
                 <p>We combine traditional teaching excellence with cutting-edge technology to deliver education that matters in today's fast-paced digital world.</p>
             </div>
@@ -1271,10 +1344,17 @@
             <button class="btn-primary" style="margin-top: 40px;"
                onclick="window.location.href='https://wa.me/919447329972';">
                 Contact Us on WhatsApp
-            </button><br>
-            <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.0955809367165!2d77.0332567740439!3d8.490087297193849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05b0f48918d23f%3A0xe2cbf5f483a7c632!2sThe%20Oxford%20computers!5e0!3m2!1sen!2sin!4v1766230247089!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </button>
+        </div>
+
+
+        <div class="map-wrapper">
+            <iframe
+                src="https://www.google.com/maps?q=The%20Oxford%20Computers%20Trivandrum&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
         </div>
     </section>
 
@@ -1299,606 +1379,17 @@
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
-        <p>&copy; 2025 The Oxford Computers. All rights reserved.</p>
+        <p>&copy; 2025-26 The Oxford Computers. All rights reserved.</p>
     </footer>
     </div>
 
-    <script>
-        // Course data for modal content
-        const courseData = {
-            pgdca: {
-                icon: '📘',
-                title: 'PGDCA - Post Graduate Diploma in Computer Applications',
-                description: 'A comprehensive one-year program designed to build strong foundations in computer applications, programming, and modern software development.',
-                details: {
-                    duration: '12 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'PGDCA Certificate',
-                    modules: [
-                        'Programming Fundamentals (C, C++, Java)',
-                        'Database Management Systems',
-                        'Web Development (HTML, CSS, JavaScript)',
-                        'Software Engineering Principles',
-                        'Computer Networks & Security',
-                        'Project Management',
-                        'Mobile App Development',
-                        'Final Project & Internship'
-                    ],
-                    career: [
-                        'Software Developer',
-                        'Web Developer',
-                        'Database Administrator',
-                        'System Analyst',
-                        'IT Consultant',
-                        'Project Manager'
-                    ],
-                    prerequisites: 'Graduate in any discipline'
-                }
-            },
-            dca: {
-                icon: '💻',
-                title: 'DCA - Diploma in Computer Applications',
-                description: 'Comprehensive Diploma in Computer Applications covering MS Office, Tally, and essential programming skills for modern workplace requirements.',
-                details: {
-                    duration: '6 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'DCA Certificate',
-                    modules: [
-                        'Computer Fundamentals',
-                        'MS Office Suite (Word, Excel, PowerPoint)',
-                        'Internet & Email Management',
-                        'Tally ERP 9 / Prime',
-                        'Basic Programming Concepts',
-                        'Digital Marketing Basics',
-                        'Data Entry & Typing Skills',
-                        'Practical Projects'
-                    ],
-                    career: [
-                        'Computer Operator',
-                        'Data Entry Operator',
-                        'Office Assistant',
-                        'Accounts Assistant',
-                        'Digital Marketing Assistant',
-                        'Administrative Executive'
-                    ],
-                    prerequisites: '10+2 or equivalent'
-                }
-            },
-            dataentry: {
-                icon: '📊',
-                title: 'Data Entry Professional Course',
-                description: 'Professional data entry training with focus on speed, accuracy, and industry-standard tools for various data processing tasks.',
-                details: {
-                    duration: '3 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'Data Entry Professional Certificate',
-                    modules: [
-                        'Typing Speed Development (40+ WPM)',
-                        'MS Excel Advanced Features',
-                        'Data Validation & Cleaning',
-                        'Online Form Filling',
-                        'Database Entry Systems',
-                        'Quality Control Measures',
-                        'Time Management Techniques',
-                        'Industry Best Practices'
-                    ],
-                    career: [
-                        'Data Entry Operator',
-                        'Data Processing Executive',
-                        'Form Filling Specialist',
-                        'Database Administrator',
-                        'Content Entry Specialist',
-                        'Freelance Data Entry Professional'
-                    ],
-                    prerequisites: 'Basic computer knowledge'
-                }
-            },
-            accounting: {
-                icon: '📈',
-                title: 'Professional Accounting Course',
-                description: 'Learn modern accounting practices, taxation, and financial management with hands-on training in industry-standard software.',
-                details: {
-                    duration: '4 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'Professional Accounting Certificate',
-                    modules: [
-                        'Fundamentals of Accounting',
-                        'Tally ERP 9 / Prime',
-                        'GST & Tax Management',
-                        'Financial Statement Preparation',
-                        'Inventory Management',
-                        'Payroll Processing',
-                        'Banking & Reconciliation',
-                        'Practical Case Studies'
-                    ],
-                    career: [
-                        'Accounts Executive',
-                        'Bookkeeper',
-                        'Tax Consultant',
-                        'Financial Analyst',
-                        'Audit Assistant',
-                        'Freelance Accountant'
-                    ],
-                    prerequisites: 'Basic mathematics knowledge'
-                }
-            },
-            python: {
-                icon: '🐍',
-                title: 'Python Programming Mastery',
-                description: 'From basics to advanced Python development, including data science, web development, and automation scripting.',
-                details: {
-                    duration: '6 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'Python Programming Certificate',
-                    modules: [
-                        'Python Fundamentals & Syntax',
-                        'Object-Oriented Programming',
-                        'Data Structures & Algorithms',
-                        'Web Development with Django/Flask',
-                        'Data Science with Pandas & NumPy',
-                        'Database Integration (MySQL, MongoDB)',
-                        'API Development & Integration',
-                        'Real-world Projects'
-                    ],
-                    career: [
-                        'Python Developer',
-                        'Data Scientist',
-                        'Web Developer',
-                        'Automation Engineer',
-                        'Backend Developer',
-                        'Machine Learning Engineer'
-                    ],
-                    prerequisites: 'Basic programming knowledge preferred'
-                }
-            },
-            webdesign: {
-                icon: '🎨',
-                title: 'Web Design & Development',
-                description: 'Create stunning, responsive websites using HTML, CSS, JavaScript, and modern frameworks with industry best practices.',
-                details: {
-                    duration: '5 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'Web Design & Development Certificate',
-                    modules: [
-                        'HTML5 & CSS3 Fundamentals',
-                        'Responsive Web Design',
-                        'JavaScript & jQuery',
-                        'Bootstrap Framework',
-                        'WordPress Development',
-                        'UI/UX Design Principles',
-                        'SEO Optimization',
-                        'Portfolio Development'
-                    ],
-                    career: [
-                        'Web Designer',
-                        'Frontend Developer',
-                        'UI/UX Designer',
-                        'WordPress Developer',
-                        'Freelance Web Developer',
-                        'Digital Marketing Specialist'
-                    ],
-                    prerequisites: 'Basic computer knowledge'
-                }
-            },
-            cttc: {
-                icon: '📙',
-                title: 'CTTC - Certificate in Trade & Technology',
-                description: 'A professional accounting program focused on modern business requirements and trade practices.',
-                details: {
-                    duration: '6 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'CTTC Certificate',
-                    modules: [
-                        'Business Fundamentals',
-                        'Trade Practices',
-                        'Technology in Business',
-                        'Financial Management',
-                        'Digital Documentation',
-                        'Communication Skills',
-                        'Project Management',
-                        'Industry Exposure'
-                    ],
-                    career: [
-                        'Business Executive',
-                        'Trade Assistant',
-                        'Administrative Officer',
-                        'Customer Service Executive',
-                        'Sales Coordinator',
-                        'Business Analyst'
-                    ],
-                    prerequisites: '10+2 or equivalent'
-                }
-            },
-            cpttc: {
-                icon: '📗',
-                title: 'CPTTC - Computer Programming & Teaching',
-                description: 'A specialized course designed to prepare students for teaching computer subjects in educational institutes.',
-                details: {
-                    duration: '8 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'CPTTC Certificate',
-                    modules: [
-                        'Programming Languages (C, C++, Java)',
-                        'Teaching Methodologies',
-                        'Curriculum Development',
-                        'Educational Technology',
-                        'Assessment Techniques',
-                        'Classroom Management',
-                        'Practical Teaching Sessions',
-                        'Research & Development'
-                    ],
-                    career: [
-                        'Computer Teacher',
-                        'Programming Instructor',
-                        'Training Coordinator',
-                        'Educational Content Developer',
-                        'Technical Trainer',
-                        'Curriculum Designer'
-                    ],
-                    prerequisites: 'Graduate with computer background'
-                }
-            },
-            pdcfa: {
-                icon: '📙',
-                title: 'PDCFA - Professional Diploma in Computerized Financial Accounting',
-                description: 'Advanced financial accounting course with computerized systems and modern accounting practices.',
-                details: {
-                    duration: '6 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'PDCFA Certificate',
-                    modules: [
-                        'Advanced Accounting Principles',
-                        'Computerized Accounting Systems',
-                        'Financial Analysis & Reporting',
-                        'Tax Planning & Management',
-                        'Audit & Compliance',
-                        'ERP Systems',
-                        'Cost Accounting',
-                        'Practical Case Studies'
-                    ],
-                    career: [
-                        'Senior Accountant',
-                        'Financial Analyst',
-                        'Tax Consultant',
-                        'Audit Executive',
-                        'Finance Manager',
-                        'Independent Practitioner'
-                    ],
-                    prerequisites: 'Basic accounting knowledge'
-                }
-            },
-            pddtp: {
-                icon: '📘',
-                title: 'PDDTP - Professional Diploma in Desktop Publishing',
-                description: 'Learn professional designing tools used in media, advertising, and printing industries.',
-                details: {
-                    duration: '4 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'PDDTP Certificate',
-                    modules: [
-                        'Adobe Photoshop',
-                        'Adobe Illustrator',
-                        'Adobe InDesign',
-                        'CorelDRAW',
-                        'Typography & Layout Design',
-                        'Print Media Design',
-                        'Digital Media Creation',
-                        'Portfolio Development'
-                    ],
-                    career: [
-                        'Graphic Designer',
-                        'Desktop Publisher',
-                        'Print Media Designer',
-                        'Advertising Designer',
-                        'Freelance Designer',
-                        'Creative Executive'
-                    ],
-                    prerequisites: 'Basic computer knowledge'
-                }
-            },
-            dcbat: {
-                icon: '📕',
-                title: 'DCBAT - Diploma in Computer Basics & Accounting with Tally',
-                description: 'Comprehensive course combining computer fundamentals with professional accounting using Tally software.',
-                details: {
-                    duration: '4 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'DCBAT Certificate',
-                    modules: [
-                        'Computer Fundamentals',
-                        'MS Office Applications',
-                        'Tally ERP 9 / Prime',
-                        'Basic Accounting Principles',
-                        'GST Implementation',
-                        'Inventory Management',
-                        'Report Generation',
-                        'Practical Training'
-                    ],
-                    career: [
-                        'Accounts Assistant',
-                        'Tally Operator',
-                        'Bookkeeper',
-                        'Data Entry Executive',
-                        'Office Coordinator',
-                        'Small Business Accountant'
-                    ],
-                    prerequisites: 'Basic education (10th pass)'
-                }
-            }
-        };
+    <script src="main.js"></script>
+       
+    
 
-        // Modal functions
-        function openModal(courseId) {
-            const course = courseData[courseId];
-            if (!course) return;
-
-            // Populate modal content
-            document.getElementById('modalIcon').textContent = course.icon;
-            document.getElementById('modalTitle').textContent = course.title;
-            document.getElementById('modalDescription').textContent = course.description;
-
-            // Create course details HTML
-            const detailsHTML = `
-                <div class="detail-section">
-                    <h4><i class="fas fa-clock"></i> Course Information</h4>
-                    <ul>
-                        <li><strong>Duration:</strong> ${course.details.duration}</li>
-                        <li><strong>Mode:</strong> ${course.details.mode}</li>
-                        <li><strong>Certification:</strong> ${course.details.certification}</li>
-                        <li><strong>Prerequisites:</strong> ${course.details.prerequisites}</li>
-                    </ul>
-                </div>
-                <div class="detail-section">
-                    <h4><i class="fas fa-book"></i> Course Modules</h4>
-                    <ul>
-                        ${course.details.modules.map(module => `<li>${module}</li>`).join('')}
-                    </ul>
-                </div>
-                <div class="detail-section">
-                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
-                    <ul>
-                        ${course.details.career.map(career => `<li>${career}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-
-            document.getElementById('courseDetails').innerHTML = detailsHTML;
-
-            // Show modal
-            document.getElementById('courseModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('courseModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('courseModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Split text into letters for animation
-        function splitTextIntoLetters(selector) {
-            const element = document.querySelector(selector);
-            if (!element) return;
-            
-            const text = element.textContent;
-            element.textContent = '';
-            
-            text.split('').forEach((letter, index) => {
-                const span = document.createElement('span');
-                span.className = 'letter';
-                span.textContent = letter === ' ' ? '\u00A0' : letter;
-                span.style.animationDelay = (index * 0.08) + 's';
-                element.appendChild(span);
-            });
-        }
-
-        // Preloader logic
-        window.addEventListener('load', function() {
-            splitTextIntoLetters('#introText');
-            
-            const minDisplayTime = 50; // 0.05 seconds
-            const startTime = Date.now();
-            
-            setTimeout(function() {
-                const preloader = document.getElementById('preloader');
-                const wipeOverlay = document.querySelector('.wipe-overlay');
-                
-                // Start the zoom out animation
-                setTimeout(() => {
-                    preloader.classList.add('fade-out');
-                }, 2200);
-                
-                // Trigger wipe effect
-                setTimeout(() => {
-                    wipeOverlay.classList.add('active');
-                    document.body.classList.add('loaded');
-                }, 2500);
-                
-                // Remove preloader from DOM
-                setTimeout(() => {
-                    preloader.remove();
-                }, 3700);
-                
-            }, minDisplayTime);
-        });
-
-        // Create floating particles
-        function createParticles() {
-            const particleCount = 30;
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                particle.style.animationDelay = Math.random() * 5 + 's';
-                document.body.appendChild(particle);
-            }
-        }
-        createParticles();
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Reveal on scroll
-        function reveal() {
-             const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
-        window.addEventListener('scroll', reveal);
-        reveal(); // run once on load
-
-        function toggleTheme() {
-    const toggle = document.querySelector('.theme-toggle');
-
-    // toggle light mode class on body
-    document.body.classList.toggle('light-mode');
-
-    // change icon
-    if (document.body.classList.contains('light-mode')) {
-        toggle.textContent = '☀️';   // light mode icon
-        localStorage.setItem('theme', 'light');
-    } else {
-        toggle.textContent = '🌙';   // dark mode icon
-        localStorage.setItem('theme', 'dark');
-    }
-}
-
-window.addEventListener('load', () => {
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
-        document.querySelector('.theme-toggle').textContent = '☀️';
-    }
-});
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Smooth scroll for buttons
-        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const href = this.getAttribute('onclick');
-                if (href && href.includes('#')) {
-                    e.preventDefault();
-                    const target = href.match(/#\w+/)[0];
-                    const element = document.querySelector(target);
-                    if (element) {
-                        const offsetTop = element.offsetTop - 80;
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Add smooth momentum scrolling for better feel
-        let scrollTimeout;
-        window.addEventListener('wheel', function(e) {
-            clearTimeout(scrollTimeout);
-            document.body.style.scrollBehavior = 'smooth';
-            scrollTimeout = setTimeout(function() {
-                document.body.style.scrollBehavior = 'smooth';
-            }, 100);
-        }, { passive: true });
-
-        // prevent automatic scroll restoration to anchor / keep at top
-if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-window.addEventListener('load', () => {
-  // remove any hash fragment so browser won't jump
-  if (location.hash === '#courses') history.replaceState(null, '', location.pathname + location.search);
-  // scroll to top explicitly
-  window.scrollTo(0, 0);
-});
-
-
-
- function splitToChars(el) {
-    const text = el.textContent.trim();
-    el.textContent = '';
-    for (let i = 0; i < text.length; i++) {
-      const span = document.createElement('span');
-      span.className = 'char';
-      span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
-      span.style.transitionDelay = (i * 30) + 'ms';
-      el.appendChild(span);
-    }
-  }
-
-  (function() {
-    const heading = document.querySelector('#ctaAnim .text-xl');
-    if (!heading) return;
-    splitToChars(heading);
-    const chars = heading.querySelectorAll('.char');
-
-    // initial entrance
-    chars.forEach((c, i) => {
-      c.style.transform = 'translateY(30px)';
-      setTimeout(() => c.style.transform = 'translateY(0)', i * 35);
-    });
-
-    // hover bounce
-    const bounce = () => {
-      chars.forEach((c, i) => {
-        setTimeout(() => c.style.transform = 'translateY(-44px)', i * 25);
-      });
-      // return with staggered bounce
-      setTimeout(() => {
-        chars.forEach((c, i) => {
-          setTimeout(() => c.style.transform = 'translateY(0)', i * 35);
-        });
-      }, 350);
-    };
-
-    const cta = document.getElementById('ctaAnim');
-    cta.addEventListener('mouseenter', bounce);
-    cta.addEventListener('click', bounce);
-    cta.addEventListener('focus', bounce, true);
-  })();
-    </script>
 </body>
 </html>
+
 
 
 
