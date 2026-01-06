@@ -1,70 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Courses | Oxford Computers</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <img src="assets/images/logo.png" alt="Oxford Computers Logo" class="logo">
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="courses.html" class="active">Our Courses</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="menu-toggle">☰</button>
-    </div>
-  </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Oxford Computers is a leading computer education institute in Trivandrum offering PGDCA, DCA, Python, Accounting and Web Designing courses. Admissions open 2025-26.">
+        <title>The Oxford Computers - AI-Powered Education Institute in Trivandrum</title>
+        <link rel="icon" type="image/x-icon" href="images/png.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-  <section class="page-banner">
-    <h1>Our Courses</h1>
-  </section>
+    <body>
 
-  <section class="container course-list">
-    <div class="course-card">
-      <h3>AIDM</h3>
-      <p>AI-Driven Digital Marketing – Learn to use AI tools and analytics to drive real-world marketing success.</p>
+         <!-- Preloader -->
+    <div id="preloader">
+        <div class="intro-content">
+            <h1 id="introText">THE OXFORD</h1>
+        </div>
     </div>
-    <div class="course-card">
-      <h3>PGDCA</h3>
-      <p>Post Graduate Diploma in Computer Applications – Advanced program covering software, networking, and web development.</p>
-    </div>
-    <div class="course-card">
-      <h3>DCA</h3>
-      <p>Diploma in Computer Applications – Learn MS Office, Tally, and basic programming skills.</p>
-    </div>
-    <div class="course-card">
-      <h3>Data Entry</h3>
-      <p>Professional course in Word Processing, Excel, and data management techniques.</p>
-    </div>
-    <div class="course-card">
-      <h3>Accounting</h3>
-      <p>Practical accounting course with Tally, GST, and financial management modules.</p>
-    </div>
-    <div class="course-card">
-      <h3>Python</h3>
-      <p>Web Development & Programming using Python Django and Database integration.</p>
-    </div>
-    <div class="course-card">
-      <h3>Web Design</h3>
-      <p>Learn HTML, CSS, JavaScript, and WordPress to build modern responsive websites.</p>
-    </div>
-  </section>
 
-  <footer>
-    <div class="container footer-content">
-      <p>© 2025 Oxford Computers. All Rights Reserved.</p>
-      <p>📞 9447329972 | 🌐 oxfordcomputers.org | ✉️ mkloxford@gmail.com</p>
-    </div>
-  </footer>
+    <!-- Wipe Overlay -->
+    <div class="wipe-overlay"></div>
 
-  <script src="assets/js/main.js"></script>
+    <!-- Course Details Modal -->
+    <div class="modal-overlay" id="courseModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon">📘</div>
+                <div>
+                    <h2 class="modal-title" id="modalTitle">Course Title</h2>
+                </div>
+            </div>
+            <p class="modal-description" id="modalDescription">Course description will appear here.</p>
+            
+            <div class="course-details" id="courseDetails">
+                <!-- Course details will be populated by JavaScript -->
+            </div>
+            
+            <div class="modal-footer">
+                <a href="https://wa.me/919447329972" target="_blank" class="modal-btn modal-btn-primary">
+                    <i class="fab fa-whatsapp"></i> Enroll Now
+                </a>
+                <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div class="bg-gradient"></div>
+        <div class="bg-overlay"></div>
+        
+ 
+
+        
+        <header>
+            <nav id="navbar">
+                <div class="logo">
+                    <img src="images/png.ico" alt="The Oxford Computers – Best Computer Institute in Trivandrum">
+                    The Oxford
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                
+            </nav>
+        </header>
+
+
+          <!-- Courses Section -->
+    <section class="courses-section reveal" id="courses">
+        <div class="section-header">
+            <div class="section-badge">OUR PROGRAMS</div>
+            <h2>Industry-Leading Courses in Kerala </h2>
+            <p>Choose from our comprehensive range of professional courses designed for today's digital economy</p>
+        </div>
+
+        <article class="courses-grid">
+            <div class="course-card">
+                <div class="course-icon">📘</div>
+                <h3>PGDCA Course in Kerala</h3>
+                <p>A comprehensive one‑year program designed to build strong foundations in computer applications.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('pgdca')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank"  class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </div>
+       
+
+            <article class="course-card">
+                <div class="course-icon">💻</div>
+                <h3>DCA Program in Kerala</h3>
+                <p>Comprehensive Diploma in Computer Applications covering MS Office, Tally, and essential programming skills.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('dca')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">📊</div>
+                <h3>Data Entry Course in Kerala</h3>
+                <p>Professional data entry training with focus on speed, accuracy, and industry-standard tools.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('dataentry')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">📈</div>
+                <h3>Accounting Course in Kerala</h3>
+                <p>Learn modern accounting practices, taxation, and financial management with hands-on training.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('accounting')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">🐍</div>
+                <h3>Python Programming Course in Kerala</h3>
+                <p>From basics to advanced Python development, including data science and automation.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('python')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">🎨</div>
+                <h3>Web Designing Course in Kerala</h3>
+                <p>Create stunning, responsive websites using HTML, CSS, JavaScript, and modern frameworks.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('webdesign')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">📙</div>
+                <h3>CTTC Course in Kerala</h3>
+                <p>A professional accounting program focused on modern business requirements.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('cttc')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">📗</div>
+                <h3>CPTTC Course in Kerala</h3>
+                <p>A course designed to prepare students for teaching computer subjects in institutes.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('cpttc')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">📙</div>
+                <h3>PDCFA Course in Kerala</h3>
+                <p>Professional Diploma in Computerized Financial Accounting</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('pdcfa')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">📘</div>
+                <h3>PDDTP Course in Kerala</h3>
+                <p>Learn designing tools used in media, advertising & printing.</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('pddtp')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-icon">📕</div>
+                <h3>DCBAT Course in Kerala</h3>
+                <p>Diploma in Computer Basics & Accounting with Tally</p>
+                <div class="course-buttons">
+                    <button class="course-btn read-more-btn" target="_blank" onclick="openModal('dcbat')">Read More</button>
+                    <a href="https://wa.me/919447329972" target="_blank" class="course-btn join-now-btn">Join Now</a>
+                </div>
+            </article>
+
+        </article>
+    </section>
+
+      <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/oxfordtvm" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="https://twitter.com/oxfordcomputers" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="https://www.instagram.com/oxfordmkl" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/the-oxford-computers" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/919447329972" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p>&copy; 2025-26 The Oxford Computers. All rights reserved.</p>
+    </footer>
+    </div>
+
+
+
+ <script src="main.js"></script>
+       
 </body>
 </html>
-
