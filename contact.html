@@ -1,55 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Oxford Computers</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Oxford Computers is a leading computer education institute in Trivandrum offering PGDCA, DCA, Python, Accounting and Web Designing courses. Admissions open 2025-26.">
+     <title>The Oxford Computers - AI-Powered Education Institute in Trivandrum</title>
+    <link rel="icon" type="image/x-icon" href="images/png.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <img src="assets/images/logo.png" alt="Oxford Computers Logo" class="logo">
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="courses.html">Our Courses</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="menu-toggle">☰</button>
+     <!-- Preloader -->
+    <div id="preloader">
+        <div class="intro-content">
+            <h1 id="introText">THE OXFORD</h1>
+        </div>
     </div>
+
+    <!-- Wipe Overlay -->
+    <div class="wipe-overlay"></div>
+
+
+    <!-- Course Details Modal -->
+    <div class="modal-overlay" id="courseModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon">📘</div>
+                <div>
+                    <h2 class="modal-title" id="modalTitle">Course Title</h2>
+                </div>
+            </div>
+            <p class="modal-description" id="modalDescription">Course description will appear here.</p>
+            
+            <div class="course-details" id="courseDetails">
+                <!-- Course details will be populated by JavaScript -->
+            </div>
+            
+            <div class="modal-footer">
+                <a href="https://wa.me/919447329972" target="_blank" class="modal-btn modal-btn-primary">
+                    <i class="fab fa-whatsapp"></i> Enroll Now
+                </a>
+                <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+<div id="main-content">
+        <div class="bg-gradient"></div>
+        <div class="bg-overlay"></div>
+        
+
+
+
+
+  <header>
+            <nav id="navbar">
+                <div class="logo">
+                    <img src="assets/images/png.ico" alt="The Oxford Computers – Best Computer Institute in Trivandrum">
+                    The Oxford
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="course.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
   </header>
 
-  <section class="page-banner">
-    <h1>Contact Us</h1>
-  </section>
 
-  <section class="container contact-section">
+
+   <!-- Contact Section -->
+<section class="contact-section reveal" id="contact">
+  <div class="contact-wrapper">
+    
     <div class="contact-info">
-      <h2>Reach Us</h2>
-      <p>📍 Oxford Computers, Malayinkeezhu, Kerala</p>
-      <p>📞 WhatsApp: <a href="https://wa.me/9447329972">9447329972</a></p>
-      <p>🌐 <a href="https://oxfordcomputers.org">oxfordcomputers.org</a></p>
-      <p>✉️ mkloxford@gmail.com</p>
+      <h2>Get in Touch</h2>
+      <p>
+        Have a question, project idea, or just want to say hello?  
+        Fill out the form and we’ll get back to you shortly.
+      </p>
+
+      <div class="info-item">
+        📍 <span>Kerala, India</span>
+      </div>
+      <div class="info-item">
+        📧 <span>mkloxford@gmail.com</span>
+      </div>
+      <div class="info-item">
+        📞 <span>+91 9447329972</span>
+      </div>
     </div>
 
-    <form class="contact-form" name="contact" netlify>
-      <h2>Send Us a Message</h2>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
+    <form class="contact-form">
+      <div class="input-group">
+        <input type="text" id="name" required>
+        <label for="name">Your Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="email" required>
+        <label for="email">Your Email</label>
+      </div>
+
+      <div class="input-group">
+        <textarea id="message" rows="4" required></textarea>
+        <label for="message">Your Message</label>
+      </div>
+
+      <button type="submit" class="send-btn">
+        Send Message 🚀
+      </button>
     </form>
-  </section>
 
-  <footer>
-    <div class="container footer-content">
-      <p>© 2025 Oxford Computers. All Rights Reserved.</p>
+  </div>
+</section>
+
+
+<div class="map-wrapper">
+            <iframe
+                src="https://www.google.com/maps?q=The%20Oxford%20Computers%20Trivandrum&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/oxfordtvm" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="https://twitter.com/oxfordcomputers" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="https://www.instagram.com/oxfordmkl" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/the-oxford-computers" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/919447329972" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p>&copy; 2025-26 The Oxford Computers. All rights reserved.</p>
+    </footer>
     </div>
-  </footer>
 
-  <script src="assets/js/main.js"></script>
+    <script src="main.js"></script>
+
 </body>
 </html>
