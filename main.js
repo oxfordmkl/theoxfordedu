@@ -566,3 +566,28 @@ window.addEventListener('load', () => {
     cta.addEventListener('click', bounce);
     cta.addEventListener('focus', bounce, true);
   })();
+
+  // Mobile Hamburger Menu
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("open");
+});
+
+// Close menu when clicking a link
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("open");
+    });
+});
+
+// Disable preloader on mobile for better LCP
+if (window.innerWidth < 768) {
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
+        preloader.style.display = "none";
+    }
+}
