@@ -904,63 +904,7 @@
         }
 
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links, .cta-btn {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .section-header h2 {
-                font-size: 32px;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-container {
-                padding: 40px 20px;
-            }
-
-            .modal-content {
-                padding: 30px 20px;
-                margin: 10px;
-            }
-
-            .modal-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .modal-title {
-                font-size: 24px;
-            }
-
-            .course-buttons {
-                flex-direction: column;
-            }
-
-            .modal-footer {
-                flex-direction: column;
-            }
-        }
+        
 
         /* Scroll Reveal */
         .reveal {
@@ -1214,4 +1158,272 @@
                 color 0.4s ease,
                 border-color 0.4s ease,
                 box-shadow 0.4s ease;
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Mobile View */
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 260px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.1rem;
+    }
+}
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* =========================
+   MOBILE NAV – FIXED
+========================= */
+
+@media (max-width: 576px) {
+
+    .hamburger {
+        display: flex;
+        position: relative;
+        z-index: 2001;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+
+        background: #0b0b0b;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0;
+        margin: 0;
+
+        transition: right 0.4s ease-in-out;
+        z-index: 2000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 1.1rem;
+        color: #ffffff;
+        text-decoration: none;
+    }
+}
+.hero-title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    line-height: 1.2;
+    font-weight: 700;
+    color: #ffffff;
+}
+.bg-gradient,
+.bg-overlay {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+}
+@media (max-width: 768px) {
+    .bg-gradient,
+    .bg-overlay {
+        display: none;
+    }
+}
+body {
+    font-display: swap;
+}
+/* Footer links styling */
+
+footer {
+    background: #0f172a; /* deep blue-black */
+    color: #cbd5e1;
+}
+
+footer .footer-links {
+    margin-top: 12px;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer .footer-links a {
+    color: #93c5fd;              /* calm educational blue */
+    text-decoration: none;
+    margin: 0 6px;
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer .social-links a {
+    color: #e5e7eb;
+    margin: 0 8px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #93c5fd;
+}
+
+.legal-page {
+    padding: 60px 20px;
+    background: #f8fafc;
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.legal-container h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.legal-container h2 {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.legal-container p,
+.legal-container li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #334155;
+}
+
+.effective-date {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.local-seo {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+    color: #e5e7eb;
+}
+
+.local-container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.local-seo h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.sub-text {
+    font-size: 16px;
+    color: #93c5fd;
+    margin-bottom: 50px;
+}
+
+.local-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.local-card {
+    background: rgba(255,255,255,0.06);
+    border-radius: 18px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.local-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.local-card i {
+    font-size: 36px;
+    color: #8b5cf6;
+    margin-bottom: 15px;
+}
+
+.local-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.local-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #cbd5f5;
 }
