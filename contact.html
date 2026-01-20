@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Oxford Computers is a leading computer education institute in Trivandrum offering PGDCA, DCA, Python, Accounting and Web Designing courses. Admissions open 2025-26.">
      <title>The Oxford Computers - AI-Powered Education Institute in Trivandrum</title>
-    <link rel="icon" type="image/x-icon" href="images/png.ico">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon-192.png">
+    <link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/assets/images/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/images/favicon-180.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -57,7 +60,7 @@
   <header>
             <nav id="navbar">
                 <div class="logo">
-                    <img src="assets/images/png.ico" alt="The Oxford Computers – Best Computer Institute in Trivandrum">
+                    <img src="assets/images/logo-main.png" alt="The Oxford Computers – Best Computer Institute in Trivandrum">
                     The Oxford
                 </div>
                 <ul class="nav-links">
@@ -92,20 +95,21 @@
       </div>
     </div>
 
-   <form class="contact-form" method="post" action="#">
+   <form id="contactForm" class="contact-form">
+
 
       <div class="input-group">
-        <input type="text" id="name" required>
+        <input type="text" id="name" required name="name">
         <label for="name">Your Name</label>
       </div>
 
       <div class="input-group">
-        <input type="email" id="email" required>
+        <input type="email" id="email" required name="email">
         <label for="email">Your Email</label>
       </div>
 
       <div class="input-group">
-        <textarea id="message" rows="4" required></textarea>
+        <textarea id="message" rows="4" required name="message"></textarea>
         <label for="message">Your Message</label>
       </div>
 <p style="font-size: 13px; color: #cbd5f5;">
@@ -113,7 +117,7 @@
   <a href="privacy-policy.html" style="color:#93c5fd;">Privacy Policy</a>.
 </p>
 
-      <button type="submit" class="send-btn">
+      <button type="submit" class="submit-btn" >
         Send Message 🚀
       </button>
     </form>
@@ -166,5 +170,62 @@
 
     <script src="main.js"></script>
 
+<!-- Sticky WhatsApp Button (Mobile Only, Scroll Triggered) -->
+<a href="https://wa.me/919447329972?text=Hi%20Oxford%20Computers,%20I%20want%20course%20admission%20details."
+   class="whatsapp-sticky hidden"
+   target="_blank"
+   aria-label="Chat with The Oxford Computers on WhatsApp">
+   <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbx9ApSzm-M5X6JUDRmPLnUZH96Q3Jvn39HozcVr3nxMlSXW5iOOFFBaEjcQbliwfbS1/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(() => {
+    alert("Thank you! We will contact you shortly.");
+    form.reset();
+  })
+  .catch(() => {
+    alert("Submission failed. Please try again.");
+  });
+});
+</script>
+
+
+// Show WhatsApp button only after scroll (mobile)
+<script>
+const whatsappBtn = document.querySelector(".whatsapp-sticky");
+
+window.addEventListener("scroll", () => {
+    if (window.innerWidth <= 768) {
+        if (window.scrollY > 120) {
+            whatsappBtn.classList.add("show");
+            whatsappBtn.classList.remove("hidden");
+        } else {
+            whatsappBtn.classList.add("hidden");
+            whatsappBtn.classList.remove("show");
+        }
+    }
+});
+</script>
+
 </body>
+
 </html>
