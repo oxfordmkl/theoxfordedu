@@ -740,64 +740,7 @@
             font-size: 14px;
         }
 
-        /* Contact Section */
-        .contact-section {
-            padding: 100px 5%;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 60px;
-            text-align: center;
-        }
-
-        .contact-container h2 {
-            font-size: 42px;
-            margin-bottom: 16px;
-        }
-
-        .contact-container p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 40px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-
-        .contact-item a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
+       
 
 
 
@@ -1283,17 +1226,17 @@
 .bg-gradient,
 .bg-overlay {
     content-visibility: auto;
-    contain-intrinsic-size: 1000px;
+    contain-intrinsic-size: 100vw 100vh;
 }
+
+
 @media (max-width: 768px) {
     .bg-gradient,
     .bg-overlay {
         display: none;
     }
 }
-body {
-    font-display: swap;
-}
+
 /* Footer links styling */
 
 footer {
@@ -1426,4 +1369,83 @@ footer .social-links a:hover {
     font-size: 15px;
     line-height: 1.6;
     color: #cbd5f5;
+}
+@media (max-width: 576px) {
+    footer p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+a:focus-visible, button:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* =========================
+   STICKY WHATSAPP BUTTON
+   (MOBILE ONLY)
+========================= */
+
+.whatsapp-sticky {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    z-index: 3000;
+    box-shadow: 0 12px 24px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover (Desktop fallback) */
+.whatsapp-sticky:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* Hide on Desktop */
+@media (min-width: 769px) {
+    .whatsapp-sticky {
+        display: none;
+    }
+}
+
+@keyframes whatsapp-pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.whatsapp-sticky {
+    animation: whatsapp-pop 0.6s ease-out;
+}
+/* Hidden initially */
+.whatsapp-sticky.hidden {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    pointer-events: none;
+}
+
+/* Visible state */
+.whatsapp-sticky.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
