@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="description" content="Learn more about The Oxford Computers, a premier computer education institute in Trivandrum dedicated to empowering students with cutting-edge skills and knowledge since 2008.">
     <title>About Us</title>
-    <link rel="icon" type="image/x-icon" href="images/png.ico">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon-192.png">
+    <link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/assets/images/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/images/favicon-180.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -57,7 +60,7 @@
 <header>
             <nav id="navbar">
                 <div class="logo">
-                    <img src="assets/images/png.ico" alt="The Oxford Computers – Best Computer Institute in Trivandrum">
+                    <img src="assets/images/logo-main.png" alt="The Oxford Computers – Best Computer Institute in Trivandrum">
                     The Oxford
                 </div>
                 <ul class="nav-links">
@@ -153,5 +156,29 @@ All courses offered by The Oxford Computers are educational services delivered t
 
     <script src="main.js"></script>
 
+<!-- Sticky WhatsApp Button (Mobile Only, Scroll Triggered) -->
+<a href="https://wa.me/919447329972?text=Hi%20Oxford%20Computers,%20I%20want%20course%20admission%20details."
+   class="whatsapp-sticky hidden"
+   target="_blank"
+   aria-label="Chat with The Oxford Computers on WhatsApp">
+   <i class="fab fa-whatsapp"></i>
+</a>
+
 </body>
+// Show WhatsApp button only after scroll (mobile)
+<script>
+const whatsappBtn = document.querySelector(".whatsapp-sticky");
+
+window.addEventListener("scroll", () => {
+    if (window.innerWidth <= 768) {
+        if (window.scrollY > 120) {
+            whatsappBtn.classList.add("show");
+            whatsappBtn.classList.remove("hidden");
+        } else {
+            whatsappBtn.classList.add("hidden");
+            whatsappBtn.classList.remove("show");
+        }
+    }
+});
+</script>
 </html>
