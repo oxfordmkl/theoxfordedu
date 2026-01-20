@@ -42,70 +42,189 @@ document.addEventListener("keydown", e => {
                     prerequisites: 'Graduate in any discipline'
                 }
             },
-            dca: {
-                icon: '💻',
-                title: 'DCA - Diploma in Computer Applications',
-                description: 'Comprehensive Diploma in Computer Applications covering MS Office, Tally, and essential programming skills for modern workplace requirements.',
-                details: {
-                    duration: '6 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'DCA Certificate',
-                    modules: [
-                        'Computer Fundamentals',
-                        'MS Office Suite (Word, Excel, PowerPoint)',
-                        'Internet & Email Management',
-                        'Tally ERP 9 / Prime',
-                        'Basic Programming Concepts',
-                        'Digital Marketing Basics',
-                        'Data Entry & Typing Skills',
-                        'Practical Projects'
-                    ],
-                    career: [
-                        'Computer Operator',
-                        'Data Entry Operator',
-                        'Office Assistant',
-                        'Accounts Assistant',
-                        'Digital Marketing Assistant',
-                        'Administrative Executive'
-                    ],
-                    prerequisites: '10+2 or equivalent'
-                }
-            },
-            dataentry: {
-                icon: '📊',
-                title: 'Data Entry Professional Course',
-                description: 'Professional data entry training with focus on speed, accuracy, and industry-standard tools for various data processing tasks.',
-                details: {
-                    duration: '3 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'Data Entry Professional Certificate',
-                    modules: [
-                        'Typing Speed Development (40+ WPM)',
-                        'MS Excel Advanced Features',
-                        'Data Validation & Cleaning',
-                        'Online Form Filling',
-                        'Database Entry Systems',
-                        'Quality Control Measures',
-                        'Time Management Techniques',
-                        'Industry Best Practices'
-                    ],
-                    career: [
-                        'Data Entry Operator',
-                        'Data Processing Executive',
-                        'Form Filling Specialist',
-                        'Database Administrator',
-                        'Content Entry Specialist',
-                        'Freelance Data Entry Professional'
-                    ],
-                    prerequisites: 'Basic computer knowledge'
-                }
-            },
+            aidm: {
+    icon: '🤖📊',
+    title: 'AIDM - AI Driven Digital Marketing',
+    description: 'A practical, industry-oriented course designed to master digital marketing strategies using AI tools, analytics, and automation.',
+    details: {
+        duration: '6 Months',
+        mode: 'Offline / Online',
+        certification: 'AIDM Certificate',
+        modules: [
+            'Digital Marketing Fundamentals',
+            'Search Engine Optimization (SEO)',
+            'Social Media Marketing (SMM)',
+            'Google Ads & Meta Ads',
+            'Content Marketing & Copywriting',
+            'AI Tools for Marketing (ChatGPT, Canva AI, Automation)',
+            'Email Marketing & CRM',
+            'Web Analytics (Google Analytics, Search Console)',
+            'Live Campaigns & Practical Projects'
+        ],
+        career: [
+            'Digital Marketing Executive',
+            'SEO Specialist',
+            'Social Media Manager',
+            'Performance Marketer',
+            'Content Strategist',
+            'Freelancer / Entrepreneur'
+        ],
+        prerequisites: 'SSLC/ Plus Two / Any Degree'
+    }
+},
+sapfico: {
+    icon: '💼📈',
+    title: 'SAP FICO - Financial Accounting & Controlling',
+    description: 'A professional ERP-focused course that provides in-depth knowledge of SAP Financial Accounting and Controlling modules used by global enterprises.',
+    details: {
+        duration: '4–6 Months',
+        mode: 'Offline / Online',
+        certification: 'SAP FICO Course Completion Certificate',
+        modules: [
+            'Introduction to ERP & SAP',
+            'SAP Financial Accounting (FI)',
+            'General Ledger Accounting',
+            'Accounts Payable & Receivable',
+            'Asset Accounting',
+            'Bank Accounting',
+            'SAP Controlling (CO)',
+            'Cost Center & Profit Center Accounting',
+            'Internal Orders & Reporting',
+            'Real-Time SAP Project Practice'
+        ],
+        career: [
+            'SAP FICO Consultant',
+            'Accounts Executive',
+            'Financial Analyst',
+            'ERP Functional Consultant',
+            'Finance & Controlling Specialist'
+        ],
+        prerequisites: 'Commerce Background / Accounting Knowledge Preferred'
+    }
+},
+dgstp: {
+    icon: '📑💰',
+    title: 'DGSTP - Diploma in Goods and Services Tax Practice',
+    description: 'A practical six-month program focused on GST, Income Tax, and computerized accounting practices using industry-standard tools.',
+    details: {
+        duration: '6 Months (360 Hours)',
+        mode: 'Offline / Online',
+        certification: 'DGSTP Certificate',
+        modules: [
+            'Financial Accounting',
+            'Direct & Indirect Taxation',
+            'GST Law, Acts & Rules',
+            'Income Tax Basics',
+            'ESI & PF',
+            'Basic Customs Duty',
+            'Computerized Accounting',
+            'Tally Prime',
+            'GST & Income Tax E-Return Filing'
+        ],
+        career: [
+            'GST Executive',
+            'Tax Consultant',
+            'Tax Analyst',
+            'Accounting Manager',
+            'Tax Manager',
+            'Accounts Assistant'
+        ],
+        prerequisites: 'Plus Two passed & above'
+    }
+},
+dcbat: {
+    icon: '🏢📊',
+    title: 'DCBAT - Diploma in Corporate Business Accounting & Taxation',
+    description: 'A comprehensive one-year professional program covering corporate accounting, taxation, GST, and financial modeling with real-world case studies.',
+    details: {
+        duration: '1 Year (720 Hours)',
+        mode: 'Offline / Online',
+        certification: 'DCBAT Certificate',
+        modules: [
+            'Fundamentals of Computer & Internet',
+            'Operating System & Office Suite',
+            'Essentials of Indian Business Accounting',
+            'Tally Prime with GST Basics',
+            'Essentials of Foreign Accounting (GCC VAT)',
+            'ZOHO Books & QuickBooks Basics',
+            'Corporate Accounting & Statutory Compliance',
+            'Financial Modeling using Excel',
+            'GST Advanced Theory & Returns',
+            'Advanced Accounting in Tally Prime',
+            'SAP FICO (Optional)'
+        ],
+        career: [
+            'Corporate Accountant',
+            'Accounts Manager',
+            'GST Practitioner',
+            'Finance Executive',
+            'Tax Consultant',
+            'ERP / SAP Accounts Executive'
+        ],
+        prerequisites: 'Plus Two passed & above'
+    }
+},
+           dca: {
+    icon: '⚡💻',
+    title: 'DCA - Diploma in Computer Applications (Fast Track)',
+    description: 'A fast-track six-month course covering programming, databases, and office automation for IT and office-based careers.',
+    details: {
+        duration: '6 Months (360 Hours)',
+        mode: 'Offline / Online',
+        certification: 'DCA Certificate',
+        modules: [
+            'Fundamentals of Computer, OS, Internet & Office Suite',
+            'Python / C++ / Java',
+            'System Engineering',
+            'RDBMS & SQL',
+            'VB.NET',
+            'Advanced Excel',
+            'Project Work'
+        ],
+        career: [
+            'Computer Operator',
+            'Office Assistant',
+            'Computer Programmer',
+            'EDP Administrator',
+            'Systems Administrator'
+        ],
+        prerequisites: '10th standard passed & above'
+    }
+},
+
+            cwpde: {
+    icon: '⌨️📄',
+    title: 'CWPDE - Certificate in Word Processing & Data Entry',
+    description: 'A skill-oriented course focusing on typing, office applications, DTP, and data entry for administrative and clerical jobs.',
+    details: {
+        duration: '6 Months (360 Hours)',
+        mode: 'Offline / Online',
+        certification: 'CWPDE Certificate',
+        modules: [
+            'Fundamentals of Computer, OS, Internet & Office Suite',
+            'Typing Practice (English & Malayalam)',
+            'Word Processing & Spreadsheet Applications',
+            'Presentation Tools',
+            'DTP – PageMaker, InDesign, ISM'
+        ],
+        career: [
+            'Data Entry Operator',
+            'Office Clerk',
+            'Receptionist',
+            'Administrative Assistant',
+            'Office Assistant',
+            'EDP Executive'
+        ],
+        prerequisites: '10th standard passed & above'
+    }
+},
+
             accounting: {
                 icon: '📈',
                 title: 'Professional Accounting Course',
                 description: 'Learn modern accounting practices, taxation, and financial management with hands-on training in industry-standard software.',
                 details: {
-                    duration: '4 Months',
+                    duration: '6 Months',
                     mode: 'Full-time / Part-time',
                     certification: 'Professional Accounting Certificate',
                     modules: [
@@ -126,7 +245,7 @@ document.addEventListener("keydown", e => {
                         'Audit Assistant',
                         'Freelance Accountant'
                     ],
-                    prerequisites: 'Basic mathematics knowledge'
+                    prerequisites: '10+2 or equivalent'
                 }
             },
             python: {
@@ -134,7 +253,7 @@ document.addEventListener("keydown", e => {
                 title: 'Python Programming Mastery',
                 description: 'From basics to advanced Python development, including data science, web development, and automation scripting.',
                 details: {
-                    duration: '6 Months',
+                    duration: '3 Months',
                     mode: 'Full-time / Part-time',
                     certification: 'Python Programming Certificate',
                     modules: [
@@ -155,7 +274,7 @@ document.addEventListener("keydown", e => {
                         'Backend Developer',
                         'Machine Learning Engineer'
                     ],
-                    prerequisites: 'Basic programming knowledge preferred'
+                    prerequisites: '10+2 or equivalent'
                 }
             },
             webdesign: {
@@ -163,7 +282,7 @@ document.addEventListener("keydown", e => {
                 title: 'Web Design & Development',
                 description: 'Create stunning, responsive websites using HTML, CSS, JavaScript, and modern frameworks with industry best practices.',
                 details: {
-                    duration: '5 Months',
+                    duration: '6 Months',
                     mode: 'Full-time / Part-time',
                     certification: 'Web Design & Development Certificate',
                     modules: [
@@ -184,125 +303,167 @@ document.addEventListener("keydown", e => {
                         'Freelance Web Developer',
                         'Digital Marketing Specialist'
                     ],
-                    prerequisites: 'Basic computer knowledge'
+                    prerequisites: '+2 or equivalent'
                 }
             },
             cttc: {
-                icon: '📙',
-                title: 'CTTC - Certificate in Trade & Technology',
-                description: 'A professional accounting program focused on modern business requirements and trade practices.',
-                details: {
-                    duration: '6 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'CTTC Certificate',
-                    modules: [
-                        'Business Fundamentals',
-                        'Trade Practices',
-                        'Technology in Business',
-                        'Financial Management',
-                        'Digital Documentation',
-                        'Communication Skills',
-                        'Project Management',
-                        'Industry Exposure'
-                    ],
-                    career: [
-                        'Business Executive',
-                        'Trade Assistant',
-                        'Administrative Officer',
-                        'Customer Service Executive',
-                        'Sales Coordinator',
-                        'Business Analyst'
-                    ],
-                    prerequisites: '10+2 or equivalent'
-                }
-            },
-            cpttc: {
-                icon: '📗',
-                title: 'CPTTC - Computer Programming & Teaching',
-                description: 'A specialized course designed to prepare students for teaching computer subjects in educational institutes.',
-                details: {
-                    duration: '8 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'CPTTC Certificate',
-                    modules: [
-                        'Programming Languages (C, C++, Java)',
-                        'Teaching Methodologies',
-                        'Curriculum Development',
-                        'Educational Technology',
-                        'Assessment Techniques',
-                        'Classroom Management',
-                        'Practical Teaching Sessions',
-                        'Research & Development'
-                    ],
-                    career: [
-                        'Computer Teacher',
-                        'Programming Instructor',
-                        'Training Coordinator',
-                        'Educational Content Developer',
-                        'Technical Trainer',
-                        'Curriculum Designer'
-                    ],
-                    prerequisites: 'Graduate with computer background'
-                }
-            },
-            pdcfa: {
-                icon: '📙',
-                title: 'PDCFA - Professional Diploma in Computerized Financial Accounting',
-                description: 'Advanced financial accounting course with computerized systems and modern accounting practices.',
-                details: {
-                    duration: '6 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'PDCFA Certificate',
-                    modules: [
-                        'Advanced Accounting Principles',
-                        'Computerized Accounting Systems',
-                        'Financial Analysis & Reporting',
-                        'Tax Planning & Management',
-                        'Audit & Compliance',
-                        'ERP Systems',
-                        'Cost Accounting',
-                        'Practical Case Studies'
-                    ],
-                    career: [
-                        'Senior Accountant',
-                        'Financial Analyst',
-                        'Tax Consultant',
-                        'Audit Executive',
-                        'Finance Manager',
-                        'Independent Practitioner'
-                    ],
-                    prerequisites: 'Basic accounting knowledge'
-                }
-            },
-            pddtp: {
-                icon: '📘',
-                title: 'PDDTP - Professional Diploma in Desktop Publishing',
-                description: 'Learn professional designing tools used in media, advertising, and printing industries.',
-                details: {
-                    duration: '4 Months',
-                    mode: 'Full-time / Part-time',
-                    certification: 'PDDTP Certificate',
-                    modules: [
-                        'Adobe Photoshop',
-                        'Adobe Illustrator',
-                        'Adobe InDesign',
-                        'CorelDRAW',
-                        'Typography & Layout Design',
-                        'Print Media Design',
-                        'Digital Media Creation',
-                        'Portfolio Development'
-                    ],
-                    career: [
-                        'Graphic Designer',
-                        'Desktop Publisher',
-                        'Print Media Designer',
-                        'Advertising Designer',
-                        'Freelance Designer',
-                        'Creative Executive'
-                    ],
-                    prerequisites: 'Basic computer knowledge'
-                }
-            },
+    icon: '👩‍🏫💻',
+    title: 'CTTC - Computer Teachers Training Course',
+    description: 'A one-year professional training program focused on computer fundamentals, programming, pedagogy, DTP, and effective IT teaching practices.',
+    details: {
+        duration: '1 Year (720 Hours)',
+        mode: 'Offline / Online',
+        certification: 'CTTC Certificate',
+        modules: [
+            'Fundamentals of Computer, OS, Internet & Office Suite',
+            'Teaching Methods (Pedagogy)',
+            'DTP (English & Malayalam) – PageMaker, InDesign, ISM',
+            'Teaching Aids Preparation',
+            'C++ Programming',
+            'HTML',
+            'Accounting with Tally',
+            'Effective IT Teaching & English Practice',
+            'Teaching Practice (In-house)'
+        ],
+        career: [
+            'Computer Teacher',
+            'IT Faculty',
+            'School Lab Assistant',
+            'Office Assistant',
+            'Computer Operator',
+            'Accounts Assistant'
+        ],
+        prerequisites: '10th standard passed & above'
+    }
+},
+
+          pdcfa: {
+    icon: '💰📊',
+    title: 'PDCFA - Professional Diploma in Computerized Financial Accounting',
+    description: 'A professional accounting course covering computerized financial accounting systems and GST-enabled taxation.',
+    details: {
+        duration: '6 Months (360 Hours)',
+        mode: 'Offline / Online',
+        certification: 'PDCFA Certificate',
+        modules: [
+            'Fundamentals of Computer, OS & Office Suite',
+            'Indian Business Accounting',
+            'Tally Prime with GST Basics',
+            'Foreign Accounting – GCC VAT',
+            'ZOHO Books',
+            'Basics of QuickBooks & Peachtree'
+        ],
+        career: [
+            'Accountant',
+            'Accounts Supervisor',
+            'Accounts Officer',
+            'Business Analyst',
+            'Financial Manager'
+        ],
+        prerequisites: '10th standard passed & above'
+    }
+},
+
+           pddtp: {
+    icon: '🎨🖨️',
+    title: 'PDDTP - Professional Diploma in Desktop Publishing',
+    description: 'A hands-on publishing course covering DTP software for print and digital media design.',
+    details: {
+        duration: '6 Months (360 Hours)',
+        mode: 'Offline / Online',
+        certification: 'PDDTP Certificate',
+        modules: [
+            'Fundamentals of Computer & Office Suite',
+            'DTP (English & Malayalam) – PageMaker, InDesign, ISM',
+            'Image Processing – Photoshop & CorelDRAW',
+            'Typography & Layout Design'
+        ],
+        career: [
+            'DTP Operator',
+            'Layout Designer',
+            'Graphic Designer',
+            'Office Assistant',
+            'Print Media Executive'
+        ],
+        prerequisites: '10th standard passed & above'
+    }
+},
+doa: {
+    icon: '🏢🖥️',
+    title: 'DOA - Diploma in Office Automation',
+    description: 'A modern office management course covering office automation tools, data visualization, and administrative skills.',
+    details: {
+        duration: '6 Months (360 Hours)',
+        mode: 'Offline / Online',
+        certification: 'DOA Certificate',
+        modules: [
+            'Fundamentals of Computer, OS, Internet & Office Suite',
+            'Advanced Excel',
+            'Data Visualization Tools',
+            'Business English',
+            'Office Administration Skills',
+            'Peripheral Management'
+        ],
+        career: [
+            'Office Executive',
+            'Personal Assistant',
+            'Administrative Assistant',
+            'Office Secretary',
+            'EDP Executive'
+        ],
+        prerequisites: '10th standard passed & above'
+    }
+},
+pdwd: {
+    icon: '🌐🎨',
+    title: 'PDWD - Professional Diploma in Web Designing',
+    description: 'A creative and technical course covering web design, front-end development, and basic full-stack concepts.',
+    details: {
+        duration: '6 Months (360 Hours)',
+        mode: 'Offline / Online',
+        certification: 'PDWD Certificate',
+        modules: [
+            'HTML, CSS, JavaScript',
+            'Graphic Designing',
+            'Front-End Frameworks',
+            'Web Development using PHP',
+            'Database Basics'
+        ],
+        career: [
+            'Web Designer',
+            'Web Developer',
+            'Web Administrator',
+            'Front-End Developer'
+        ],
+        prerequisites: '10th standard passed & above'
+    }
+},
+pdcad: {
+    icon: '📐🏗️',
+    title: 'PDCAD - Professional Diploma in Computer Aided Design',
+    description: 'A design-focused course providing hands-on training in AutoCAD and Photoshop for technical drafting and design.',
+    details: {
+        duration: '6 Months (360 Hours)',
+        mode: 'Offline / Online',
+        certification: 'PDCAD Certificate',
+        modules: [
+            'AutoCAD Level I (2D)',
+            'AutoCAD Level II (3D)',
+            'Photoshop',
+            'Technical Drafting & Design Concepts'
+        ],
+        career: [
+            'Draftsman',
+            'AutoCAD Operator',
+            'Interior Designer',
+            'Industrial Designer',
+            'Architectural Assistant'
+        ],
+        prerequisites: 'Plus Two / ITI passed & above'
+    }
+}
+,
+
             dcbat: {
                 icon: '📕',
                 title: 'DCBAT - Diploma in Computer Basics & Accounting with Tally',
