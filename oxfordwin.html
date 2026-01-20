@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Oxford Win Arena 🎮 | Play & Win Scholarships | The Oxford Computers</title>
+
+<meta name="description" content="Play & Win scholarships, fee concessions, PSC training and food vouchers at The Oxford Computers. Gen-Z exclusive gaming arena.">
+
+<link rel="icon" href="assets/images/favicon-192.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
+body{
+  background: radial-gradient(circle at top,#1a1a2e,#000);
+  color:#fff;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* Header */
+header{
+  padding:20px;
+  text-align:center;
+}
+header h1{
+  font-size:2rem;
+  background:linear-gradient(90deg,#00e5ff,#ff9800);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+header p{opacity:.85}
+
+/* Arena */
+.arena{
+  max-width:420px;
+  margin:30px auto;
+  background:#0f172a;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 0 40px rgba(0,255,255,.15);
+  text-align:center;
+}
+
+/* Inputs */
+.input-box{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  font-size:15px;
+}
+select.input-box{cursor:pointer}
+
+/* Wheel */
+.wheel-box{position:relative;margin:20px auto}
+canvas{
+  border-radius:50%;
+  box-shadow:0 0 25px rgba(255,152,0,.4);
+}
+.spin-btn{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#00e676,#1de9b6);
+  border:none;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(0,255,150,.6);
+}
+
+/* Result */
+.result{
+  margin-top:18px;
+  font-size:1.2rem;
+  color:#00e676;
+  font-weight:700;
+}
+
+/* WhatsApp */
+.whatsapp-btn{
+  display:none;
+  margin-top:18px;
+  background:#25D366;
+  padding:14px;
+  border-radius:14px;
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  font-size:13px;
+  opacity:.6;
+  margin:30px 10px;
+}
+.home-btn {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #00e5ff, #2979ff);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
+  z-index: 10001;
+  text-decoration: none;
+}
+
+.home-btn:hover {
+  transform: scale(1.08);
+}
+
+</style>
+</head>
+
+<body>
+<a href="index.html" class="home-btn" aria-label="Go to Home">
+    <i class="fas fa-home"></i>
+</a>
+
+<header>
+  <h1>🎮 Oxford Win Arena</h1>
+  <p>Play • Win • Learn • Grow</p>
+</header>
+
+<section class="arena">
+
+  <h2>🎁 Spin & Win Scholarships</h2>
+  <p style="font-size:14px;opacity:.85;margin-bottom:15px">
+    Gen-Z Exclusive • Everyone Wins
+  </p>
+
+  <!-- Lead Inputs -->
+  <input class="input-box" id="playerName" placeholder="Your Name">
+  <input class="input-box" id="playerPhone" placeholder="WhatsApp Number">
+  <select class="input-box" id="playerCourse">
+    <option value="">Select Course</option>
+     <option>DIGITAL MARKETING</option>
+    <option>PGDCA</option>
+    <option>DCA</option>
+    <option>WEB DESIGNING</option>
+    <option>SAP FICO</option>
+    <option>Python</option>
+    <option>Accounting</option>
+  </select>
+
+  <!-- Wheel -->
+  <div class="wheel-box">
+    <canvas id="wheel" width="280" height="280"></canvas>
+    <button class="spin-btn" onclick="spin()">SPIN</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <a id="whatsappBtn" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> Claim Your Prize
+  </a>
+
+</section>
+
+<footer>
+  * Offers valid after admission • One spin per student • Limited period<br>
+  © The Oxford Computers – Malayinkeezhu
+</footer>
+
+<script>
+const prizes=[
+ "₹1000 Fee Concession",
+ "₹2000 Fee Concession",
+ "₹2500 Scholarship",
+ "Free PSC Training (₹1500)",
+ "Food Voucher",
+ "Free Demo Class"
+];
+
+const canvas=document.getElementById("wheel");
+const ctx=canvas.getContext("2d");
+const size=prizes.length;
+const angle=2*Math.PI/size;
+let rot=0;
+
+function draw(){
+ prizes.forEach((t,i)=>{
+  ctx.beginPath();
+  ctx.moveTo(140,140);
+  ctx.arc(140,140,140,i*angle,(i+1)*angle);
+  ctx.fillStyle=i%2?"#ff9800":"#ff5722";
+  ctx.fill();
+  ctx.save();
+  ctx.translate(140,140);
+  ctx.rotate(i*angle+angle/2);
+  ctx.fillStyle="#fff";
+  ctx.font="14px sans-serif";
+  ctx.textAlign="right";
+  ctx.fillText(t,120,5);
+  ctx.restore();
+ });
+}
+draw();
+
+function spin(){
+ const name=playerName.value.trim();
+ const phone=playerPhone.value.trim();
+ const course=playerCourse.value;
+
+ if(!name||!phone||!course){
+  alert("Please fill all details");
+  return;
+ }
+
+ const win=Math.floor(Math.random()*prizes.length);
+ rot+=360*5+(360-(win*(360/size)));
+ canvas.style.transition="transform 4s ease-out";
+ canvas.style.transform=`rotate(${rot}deg)`;
+
+ setTimeout(()=>{
+  const prize=prizes[win];
+  result.innerHTML=`🎉 Congratulations ${name}!<br>You won <b>${prize}</b>`;
+  const msg=encodeURIComponent(
+`Hi Oxford Computers 👋
+I played the Oxford Win Arena.
+
+Name: ${name}
+Course: ${course}
+Prize Won: ${prize}
+
+Please guide me for admission.`
+  );
+  whatsappBtn.href=`https://wa.me/919447329972?text=${msg}`;
+  whatsappBtn.style.display="block";
+ },4200);
+}
+</script>
+<script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+document.addEventListener('keydown', function(e) {
+    if (
+        e.keyCode === 123 || // F12
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+        (e.ctrlKey && e.key === 'U')
+    ) {
+        e.preventDefault();
+    }
+});
+</script>
+
+</body>
+</html>
