@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Student Registration | The Oxford Computers Malayinkeezhu</title>
+    <meta name="description" content="Register for PGDCA, DCA, Python, AI Digital Marketing, Accounting and Web Designing courses at The Oxford Computers, Malayinkeezhu – Kerala State Rutronix Authorized Training Center.">
+
+    <link rel="canonical" href="https://theoxfordedu.com/student-registration.html">
+
+    <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="assets/images/favicon-192.png">
+    <link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/assets/images/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/images/favicon-180.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "The Oxford Computers",
+      "url": "https://theoxfordedu.com",
+      "telephone": "+91-9447329972",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Malayinkeezhu",
+        "addressLocality": "Thiruvananthapuram",
+        "addressRegion": "Kerala",
+        "postalCode": "695571",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+
+    <style>
+       /* =========================
+   STUDENT REGISTRATION PAGE
+========================= */
+
+body {
+    background: #f3f6fb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1f2937;
+}
+
+/* Container */
+.registration-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Header */
+.registration-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.registration-header h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.registration-header p {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #475569;
+}
+
+/* Grid */
+.registration-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .registration-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Google Form Card */
+.form-wrapper {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.08),
+        0 8px 16px rgba(15, 23, 42, 0.06);
+    border: 1px solid #e5e7eb;
+}
+
+.form-wrapper iframe {
+    width: 100%;
+    height: 85vh;
+    border: none;
+}
+
+/* Trust Box */
+.trust-box {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    padding: 36px 32px;
+    border-radius: 18px;
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.08),
+        0 8px 16px rgba(15, 23, 42, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+/* Section Titles */
+.trust-box h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 18px;
+}
+
+/* Lists */
+.trust-box ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 28px;
+}
+
+.trust-box li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 14px;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: #334155;
+}
+
+.trust-box li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* Courses Highlight */
+.trust-box ul:last-of-type li::before {
+    content: "➤";
+    color: #0ea5e9;
+}
+
+/* WhatsApp CTA */
+.cta-box {
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px dashed #cbd5f5;
+}
+
+.cta-box p {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.cta-box a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    background: linear-gradient(135deg, #25d366, #16a34a);
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 12px 24px rgba(34, 197, 94, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-box a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(34, 197, 94, 0.45);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation (reuse your existing navbar if needed) -->
+
+<main class="registration-container">
+
+    <!-- HEADER -->
+    <div class="registration-header">
+        <h1>Student Registration – The Oxford Computers</h1>
+        <p>
+            Register online for AI Digital Marketing,PGDCA, DCA, Python Programming, 
+            Accounting,SAP FICO, Data Entry and Web Designing courses at
+            <strong>The Oxford Computers, Malayinkeezhu, Trivandrum</strong>.
+        </p>
+    </div>
+
+    <!-- CONTENT GRID -->
+    <section class="registration-grid">
+
+        <!-- GOOGLE FORM -->
+        <div class="form-wrapper">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfSj4a6O0wHjOicFFgmvFc_K0As3BI-5BcnW4fiHLPrDlqKoA/viewform?embedded=true&utm_source=website&utm_medium=form&utm_campaign=student_registration"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- TRUST / INFO -->
+        <aside class="trust-box">
+            <h2>Why Register with Us?</h2>
+            <ul>
+                <li>Kerala State Rutronix Authorized Training Center</li>
+                <li>Government-Approved Certificates</li>
+                <li>Job-Oriented & Practical Training</li>
+                <li>Placement Assistance & Project Support</li>
+                <li>Affordable Fees & Flexible Payment Options</li>
+            </ul>
+
+            <h2>Courses Open for Admission</h2>
+            <ul>
+                <li>AI-Driven Digital Marketing</li>
+                <li>SAP FICO</li>   
+                <li>PGDCA / DCA</li>
+                <li>Python Programming & Web Development</li>
+                <li>Accounting, Tally & GST</li>
+                <li>Data Entry & Office Automation</li>
+            </ul>
+
+            <div class="cta-box">
+                <p><strong>Need faster admission?</strong></p>
+                <a href="https://wa.me/919447329972" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </aside>
+
+    </section>
+
+</main>
+
+ <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <h3>The Oxford Computers</h3>
+                    <p>
+                        Kerala State Rutronix Approved Computer Education Institute<br>
+                        Malayinkeezhu, Trivandrum, Kerala
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="course.html">Courses</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="refund-policy.html">Refund & Cancellation Policy</a>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/oxfordtvm" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://twitter.com/oxfordcomputers" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/oxfordmkl" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/the-oxford-computers" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/919447329972" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026–27 The Oxford Computers. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js" defer></script>
+
+    <!-- Sticky WhatsApp Button (Mobile Only) -->
+    <a href="https://wa.me/919447329972?text=Hi%20Oxford%20Computers,%20I%20want%20to%20contact%20you."
+       class="whatsapp-sticky hidden"
+       target="_blank"
+       aria-label="Chat with The Oxford Computers on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Form Submission Script -->
+    <script>
+        const form = document.getElementById("contactForm");
+        const formStatus = document.getElementById("formStatus");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // Show loading state
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            const formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value || "Not provided",
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value,
+                timestamp: new Date().toISOString()
+            };
+
+            fetch("https://script.google.com/macros/s/AKfycbx9ApSzm-M5X6JUDRmPLnUZH96Q3Jvn39HozcVr3nxMlSXW5iOOFFBaEjcQbliwfbS1/exec", {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                // Success
+                formStatus.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Thank you! We received your message and will contact you shortly.</div>';
+                form.reset();
+                
+                // Reset button
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                    formStatus.innerHTML = '';
+                }, 5000);
+            })
+            .catch((error) => {
+                // Error
+                formStatus.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Submission failed. Please try again or contact us directly.</div>';
+                
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                console.error('Form submission error:', error);
+            });
+        });
+
+        // WhatsApp button scroll trigger
+        const whatsappBtn = document.querySelector(".whatsapp-sticky");
+
+        window.addEventListener("scroll", () => {
+            if (window.innerWidth <= 768) {
+                if (window.scrollY > 120) {
+                    whatsappBtn.classList.add("show");
+                    whatsappBtn.classList.remove("hidden");
+                } else {
+                    whatsappBtn.classList.add("hidden");
+                    whatsappBtn.classList.remove("show");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

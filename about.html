@@ -3,19 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="Learn more about The Oxford Computers, a premier computer education institute in Trivandrum dedicated to empowering students with cutting-edge skills and knowledge since 2008.">
-    <title>About Us</title>
+    <meta name="description" content="Learn more about The Oxford Computers, a premier computer education institute in Trivandrum dedicated to empowering students with cutting-edge skills and knowledge since 2008.">
+    <title>About Us - The Oxford Computers | Leading Computer Institute in Trivandrum</title>
+    <link rel="canonical" href="https://theoxfordedu.com/about.html">
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon-192.png">
     <link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32">
-<link rel="icon" href="/assets/images/favicon-192.png" sizes="192x192">
-<link rel="apple-touch-icon" href="/assets/images/favicon-180.png">
+    <link rel="icon" href="/assets/images/favicon-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/assets/images/favicon-180.png">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Schema.org About Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "EducationalOrganization",
+        "name": "The Oxford Computers",
+        "foundingDate": "2008",
+        "description": "Premier computer education institute in Trivandrum providing government-certified courses since 2008",
+        "url": "https://theoxfordedu.com",
+        "logo": "https://theoxfordedu.com/assets/images/logo-main.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Malayinkeezhu",
+          "addressLocality": "Thiruvananthapuram",
+          "addressRegion": "Kerala",
+          "postalCode": "695571",
+          "addressCountry": "IN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9447329972",
+          "contactType": "Admissions",
+          "email": "t.005.rutronix@gmail.com"
+        }
+      }
+    }
+    </script>
 </head>
+
 <body>
-
-
-     <!-- Preloader -->
+    <!-- Preloader -->
     <div id="preloader">
         <div class="intro-content">
             <h1 id="introText">THE OXFORD COMPUTERS</h1>
@@ -25,11 +59,10 @@
     <!-- Wipe Overlay -->
     <div class="wipe-overlay"></div>
 
-
     <!-- Course Details Modal -->
     <div class="modal-overlay" id="courseModal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
             <div class="modal-header">
                 <div class="modal-icon" id="modalIcon">📘</div>
                 <div>
@@ -51,134 +84,223 @@
         </div>
     </div>
 
-<div id="main-content">
+    <div id="main-content">
         <div class="bg-gradient"></div>
         <div class="bg-overlay"></div>
-        
 
-
-<header>
-            <nav id="navbar">
+        <!-- Navigation -->
+        <header>
+            <nav id="navbar" role="navigation" aria-label="Main Navigation">
                 <div class="logo">
-                    <img src="assets/images/logo-main.png" alt="The Oxford Computers – Best Computer Institute in Trivandrum">
-                    The Oxford Computers
+                    <img src="assets/images/logo-main.png" alt="The Oxford Computers Logo">
+                    <span>The Oxford Computers</span>
                 </div>
+                
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="course.html">Courses</a></li>
+                    <li><a href="about.html" aria-current="page">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                
+                <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
-</header>
+        </header>
 
-
- <!-- About Section -->
-    <section class="about-section reveal" id="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Empowering Students with Computer Education Since 2008</h2>
-                <p>The Oxford Computers is committed to providing world-class education and fostering a supportive learning environment. Our experienced faculty and comprehensive curriculum are designed to prepare students for success in their chosen fields.</p>
-                <p>We combine traditional teaching excellence with cutting-edge technology to deliver education that matters in today's fast-paced digital world.</p>
-            <p>
-The Oxford Computers is a government-authorized computer education and training institute operating as an Authorized Training Centre (ATC) under Kerala State Rutronix. We provide classroom-based and guided computer training programs for students, job seekers, and professionals in Trivandrum and surrounding regions.
-</p>
-
-<p>
-All courses offered by The Oxford Computers are educational services delivered through structured offline and blended learning models. We do not sell physical products or engage in product shipping or e-commerce activities.
-</p>
-
+        <!-- About Section -->
+        <section class="about-section reveal" id="about">
+            <div class="section-header">
+                <div class="section-badge">ABOUT US</div>
+                <h1>Empowering Students with Computer Education Since 2008</h1>
             </div>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-number">5000+</div>
-                    <div class="stat-label">Students Trained</div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Your Path to Digital Success</h2>
+                    <p>
+                        The Oxford Computers is committed to providing world-class education and fostering 
+                        a supportive learning environment. Our experienced faculty and comprehensive curriculum 
+                        are designed to prepare students for success in their chosen fields.
+                    </p>
+                    <p>
+                        We combine traditional teaching excellence with cutting-edge technology to deliver 
+                        education that matters in today's fast-paced digital world.
+                    </p>
+
+                    <h3>Government Authorized Training Center</h3>
+                    <p>
+                        The Oxford Computers is a government-authorized computer education and training 
+                        institute operating as an Authorized Training Centre (ATC) under Kerala State Rutronix. 
+                        We provide classroom-based and guided computer training programs for students, job 
+                        seekers, and professionals in Trivandrum and surrounding regions.
+                    </p>
+
+                    <h3>Our Commitment</h3>
+                    <p>
+                        All courses offered by The Oxford Computers are educational services delivered through 
+                        structured offline and blended learning models. We focus on quality education, practical 
+                        skills development, and career readiness for our students.
+                    </p>
                 </div>
-                <div class="stat-box">
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">Placement Rate</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Expert Trainers</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years Experience</div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Students Trained</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Placement Rate</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Expert Trainers</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <p>
-📍 <strong>Location:</strong> Malayinkeezhu, Trivandrum, Kerala, India<br>
-📞 <strong>Phone:</strong> +91 94473 29972<br>
-✉️ <strong>Email:</strong> 
-<a href="mailto:t.005.rutronix@gmail.com">t.005.rutronix@gmail.com</a>
 
-</p>
+           
+            <!-- Contact Information -->
+                <div class="contact-info" style="display: flex; flex-direction: column; gap: 30px; margin-top: 50px;">
+                    <h2>Let's Connect</h2>
+                    <p>
+                        Have a question about our courses or want to discuss your career goals?  
+                        Reach out to us and we'll get back to you shortly.
+                    </p>
 
-    </section>
+                    <div class="contact-methods">
+                        <div class="contact-method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>Visit Us</h3>
+                                <p>The Oxford Computers<br>Malayinkeezhu, Trivandrum<br>Kerala 695571, India</p>
+                            </div>
+                        </div>
 
+                        <div class="contact-method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>Email Us</h3>
+                                <p><a href="mailto:t.005.rutronix@gmail.com">t.005.rutronix@gmail.com</a></p>
+                                <p class="note">We respond within 24 hours</p>
+                            </div>
+                        </div>
 
+                        <div class="contact-method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>Call Us</h3>
+                                <p><a href="tel:+919447329972">+91 94473 29972</a></p>
+                                <p class="note">Mon-Sat: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
 
+                        <div class="contact-method-item">
+                            <div class="method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>WhatsApp</h3>
+                                <p><a href="https://wa.me/919447329972" target="_blank">Chat with us instantly</a></p>
+                                <p class="note">Quick responses guaranteed</p>
+                            </div>
+                        </div>
+                    </div>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-links">
-            <a href="https://www.facebook.com/oxfordtvm" target="_blank" aria-label="The Oxford Computers Facebook">
-                <i class="fab fa-facebook"></i>
-            </a>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <h3>The Oxford Computers</h3>
+                    <p>
+                        Kerala State Rutronix Approved Computer Education Institute<br>
+                        Malayinkeezhu, Trivandrum, Kerala
+                    </p>
+                </div>
 
-            <a href="https://twitter.com/oxfordcomputers" target="_blank" aria-label="The  Oxford Computers x [twitter]">
-                <i class="fab fa-twitter"></i>
-            </a>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="course.html">Courses</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
 
-            <a href="https://www.instagram.com/oxfordmkl" target="_blank" aria-label="The Oxford Computers Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/the-oxford-computers" target="_blank" aria-label="The Oxford Computers LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://wa.me/919447329972" target="_blank" aria-label="The Oxford Computers WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
-         <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms & Conditions</a> |
-        <a href="refund-policy.html">Refund & Cancellation Policy</a> |
-        <a href="contact.html">Contact Us</a>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="refund-policy.html">Refund & Cancellation Policy</a>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/oxfordtvm" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://twitter.com/oxfordcomputers" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/oxfordmkl" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/the-oxford-computers" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/919447329972" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026–27 The Oxford Computers. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
-        <p>&copy; 2026-27 The Oxford Computers. All rights reserved.</p>
-    </footer>
-    </div>
 
+    <!-- Scripts -->
+    <script src="main.js" defer></script>
 
+    <!-- Sticky WhatsApp Button (Mobile Only, Scroll Triggered) -->
+    <a href="https://wa.me/919447329972?text=Hi%20Oxford%20Computers,%20I%20want%20course%20admission%20details."
+       class="whatsapp-sticky hidden"
+       target="_blank"
+       aria-label="Chat with The Oxford Computers on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
+    <script>
+        const whatsappBtn = document.querySelector(".whatsapp-sticky");
 
-    <script src="main.js"></script>
-
-<!-- Sticky WhatsApp Button (Mobile Only, Scroll Triggered) -->
-<a href="https://wa.me/919447329972?text=Hi%20Oxford%20Computers,%20I%20want%20course%20admission%20details."
-   class="whatsapp-sticky hidden"
-   target="_blank"
-   aria-label="Chat with The Oxford Computers on WhatsApp">
-   <i class="fab fa-whatsapp"></i>
-</a>
-
+        window.addEventListener("scroll", () => {
+            if (window.innerWidth <= 768) {
+                if (window.scrollY > 120) {
+                    whatsappBtn.classList.add("show");
+                    whatsappBtn.classList.remove("hidden");
+                } else {
+                    whatsappBtn.classList.add("hidden");
+                    whatsappBtn.classList.remove("show");
+                }
+            }
+        });
+    </script>
 </body>
-// Show WhatsApp button only after scroll (mobile)
-<script>
-const whatsappBtn = document.querySelector(".whatsapp-sticky");
-
-window.addEventListener("scroll", () => {
-    if (window.innerWidth <= 768) {
-        if (window.scrollY > 120) {
-            whatsappBtn.classList.add("show");
-            whatsappBtn.classList.remove("hidden");
-        } else {
-            whatsappBtn.classList.add("hidden");
-            whatsappBtn.classList.remove("show");
-        }
-    }
-});
-</script>
 </html>
