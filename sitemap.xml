@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Home -->
   <url>
     <loc>https://theoxfordedu.com/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- Courses -->
   <url>
     <loc>https://theoxfordedu.com/course.html</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- Student Registration -->
   <url>
     <loc>https://theoxfordedu.com/student-registration.html</loc>
     <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
 
-  <!-- About -->
   <url>
     <loc>https://theoxfordedu.com/about.html</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Contact -->
   <url>
     <loc>https://theoxfordedu.com/contact.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://theoxfordedu.com/oxfordwin.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Legal Pages -->
   <url>
     <loc>https://theoxfordedu.com/privacy-policy.html</loc>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
 
   <url>
     <loc>https://theoxfordedu.com/terms.html</loc>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
 
   <url>
     <loc>https://theoxfordedu.com/refund-policy.html</loc>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
 
