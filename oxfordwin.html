@@ -1,263 +1,1246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Oxford Win Arena 🎮 | Play & Win Scholarships | The Oxford Computers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxford Win Arena 🎮 | Play & Win + Refer & Earn ₹500 | The Oxford Computers</title>
+    <meta name="description" content="Play & Win scholarships + Refer friends to earn extra ₹500! Double rewards at The Oxford Computers.">
+    <link rel="canonical" href="https://theoxfordedu.com/oxfordwin.html">
 
-<meta name="description" content="Play & Win scholarships, fee concessions, PSC training and food vouchers at The Oxford Computers. Gen-Z exclusive gaming arena.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="The Oxford Computers, Malayinkeezhu">
+<meta name="keywords" content="Oxford Win Arena, Play and Win Scholarships, Refer and Earn, Computer Courses Trivandrum, Oxford Computers Malayinkeezhu">
 
-<link rel="icon" href="assets/images/favicon-192.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theoxfordedu.com/oxfordwin.html">
+    <meta property="og:title" content="🎮 Win Scholarships + Earn ₹500 by Referring!">
+    <meta property="og:description" content="Play now and win up to ₹2500 + Refer friends to earn extra ₹500!">
+    <meta property="og:image" content="https://theoxfordedu.com/assets/images/win-arena-og.jpg">
+    
+    <link rel="icon" href="assets/images/favicon-192.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PromotionEvent",
+  "name": "Oxford Win Arena – Play & Win Scholarships",
+  "description": "Play the Oxford Win Arena game to win scholarships up to ₹2500 and earn ₹500 for every referral admission.",
+  "url": "https://theoxfordedu.com/oxfordwin.html",
+  "organizer": {
+    "@type": "EducationalOrganization",
+    "name": "The Oxford Computers",
+    "url": "https://theoxfordedu.com"
+  },
+  "location": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Krishna Building, Near Malayinkeezhu",
+      "addressLocality": "Malayinkeezhu",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
-body{
-  background: radial-gradient(circle at top,#1a1a2e,#000);
-  color:#fff;
-  min-height:100vh;
-  overflow-x:hidden;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-/* Header */
-header{
-  padding:20px;
-  text-align:center;
-}
-header h1{
-  font-size:2rem;
-  background:linear-gradient(90deg,#00e5ff,#ff9800);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-header p{opacity:.85}
+        body {
+            background: radial-gradient(circle at top, #1a1a2e, #000);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 40px;
+        }
 
-/* Arena */
-.arena{
-  max-width:420px;
-  margin:30px auto;
-  background:#0f172a;
-  border-radius:20px;
-  padding:25px;
-  box-shadow:0 0 40px rgba(0,255,255,.15);
-  text-align:center;
-}
+        header {
+            padding: 25px 20px;
+            text-align: center;
+        }
 
-/* Inputs */
-.input-box{
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  border-radius:10px;
-  border:none;
-  outline:none;
-  font-size:15px;
-}
-select.input-box{cursor:pointer}
+        header h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            background: linear-gradient(90deg, #00e5ff, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
 
-/* Wheel */
-.wheel-box{position:relative;margin:20px auto}
-canvas{
-  border-radius:50%;
-  box-shadow:0 0 25px rgba(255,152,0,.4);
-}
-.spin-btn{
-  position:absolute;
-  inset:0;
-  margin:auto;
-  width:80px;
-  height:80px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#00e676,#1de9b6);
-  border:none;
-  font-weight:800;
-  cursor:pointer;
-  box-shadow:0 0 20px rgba(0,255,150,.6);
-}
+        header p {
+            opacity: 0.85;
+            font-size: 16px;
+        }
 
-/* Result */
-.result{
-  margin-top:18px;
-  font-size:1.2rem;
-  color:#00e676;
-  font-weight:700;
-}
+        .arena {
+            max-width: 440px;
+            margin: 30px auto;
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: 24px;
+            padding: 30px 25px;
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.2);
+            text-align: center;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+        }
 
-/* WhatsApp */
-.whatsapp-btn{
-  display:none;
-  margin-top:18px;
-  background:#25D366;
-  padding:14px;
-  border-radius:14px;
-  color:#fff;
-  font-weight:700;
-  text-decoration:none;
-}
+        .arena h2 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
 
-/* Footer */
-footer{
-  text-align:center;
-  font-size:13px;
-  opacity:.6;
-  margin:30px 10px;
-}
-.home-btn {
-  position: fixed;
-  top: 18px;
-  left: 18px;
-  width: 44px;
-  height: 44px;
-  background: linear-gradient(135deg, #00e5ff, #2979ff);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 18px;
-  box-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
-  z-index: 10001;
-  text-decoration: none;
-}
+        .arena-subtitle {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-bottom: 20px;
+            color: #00e676;
+        }
 
-.home-btn:hover {
-  transform: scale(1.08);
-}
+        /* Referral Banner */
+        .referral-banner {
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
 
-</style>
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .referral-banner h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .referral-banner p {
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 14px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            outline: none;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #108b31;
+            transition: all 0.3s ease;
+        }
+
+        .input-box:focus {
+            border-color: #00e5ff;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .input-box::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        select.input-box {
+            cursor: pointer;
+        }
+
+        .error {
+            border-color: #ff5252 !important;
+        }
+
+        .error-msg {
+            color: #ff5252;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .wheel-box {
+            position: relative;
+            margin: 25px auto;
+            width: 280px;
+            height: 280px;
+        }
+
+        canvas {
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255, 152, 0, 0.5);
+        }
+
+        .spin-btn {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00e676, #1de9b6);
+            border: none;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 0 25px rgba(0, 255, 150, 0.7);
+            transition: all 0.3s ease;
+            color: #000;
+        }
+
+        .spin-btn:hover:not(:disabled) {
+            transform: scale(1.05);
+        }
+
+        .spin-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #00e676;
+            font-weight: 700;
+            line-height: 1.6;
+            min-height: 50px;
+        }
+
+        /* Referral Section (Shows after winning) */
+        .referral-section {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.15), rgba(255, 87, 34, 0.15));
+            border: 2px solid #ff9800;
+            border-radius: 16px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .referral-section h3 {
+            color: #ff9800;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .referral-section p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .referral-link-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .referral-link-box input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #00e5ff;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .copy-btn {
+            background: #00e5ff;
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 13px;
+        }
+
+        .copy-btn:hover {
+            background: #00d4e6;
+        }
+
+        .copy-btn.copied {
+            background: #00e676;
+        }
+
+        .referral-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ff9800;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .share-referral-btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .share-ref-btn {
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .share-ref-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .ref-whatsapp {
+            background: #25D366;
+        }
+
+        .ref-facebook {
+            background: #1877F2;
+        }
+
+        .ref-instagram {
+            background: linear-gradient(45deg, #F58529, #DD2A7B);
+        }
+
+        .ref-twitter {
+            background: #1DA1F2;
+        }
+
+        .whatsapp-btn {
+            display: none;
+            margin-top: 20px;
+            background: #25D366;
+            padding: 16px 24px;
+            border-radius: 14px;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-btn i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #00e5ff, #2979ff);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+            z-index: 10001;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .terms-link {
+            margin-top: 15px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .terms-link a {
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+            margin: 30px 20px;
+            line-height: 1.6;
+        }
+
+        .already-played {
+            background: rgba(255, 152, 0, 0.15);
+            border: 2px solid #ff9800;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .already-played h3 {
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+
+        /* Referred Badge */
+        .referred-badge {
+            background: linear-gradient(135deg, #4caf50, #8bc34a);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .arena {
+                margin: 20px 15px;
+                padding: 25px 20px;
+            }
+
+            .wheel-box {
+                width: 240px;
+                height: 240px;
+            }
+
+            canvas {
+                width: 240px !important;
+                height: 240px !important;
+            }
+
+            .spin-btn {
+                width: 75px;
+                height: 75px;
+                font-size: 14px;
+            }
+
+            .share-referral-btns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<a href="index.html" class="home-btn" aria-label="Go to Home">
-    <i class="fas fa-home"></i>
-</a>
+    <a href="index.html" class="home-btn" aria-label="Go to Home">
+        <i class="fas fa-home"></i>
+    </a>
 
-<header>
-  <h1>🎮 Oxford Win Arena</h1>
-  <p>Play • Win • Learn • Grow</p>
-</header>
+    <header>
+        <h1>🎮 Oxford Win Arena</h1>
+        <p>Play • Win • Refer • Earn More</p>
+    </header>
 
-<section class="arena">
+    <section class="arena" id="gameArena">
+        <h2>🎁 Spin & Win Scholarships</h2>
+        <p class="arena-subtitle">Win Now + Refer to Earn ₹500 Extra!</p>
 
-  <h2>🎁 Spin & Win Scholarships</h2>
-  <p style="font-size:14px;opacity:.85;margin-bottom:15px">
-    Gen-Z Exclusive • Everyone Wins
-  </p>
+        <!-- Referral Banner -->
+        <div class="referral-banner">
+            <h3>💰 BONUS: Refer & Earn ₹500!</h3>
+            <p>Share your link after winning & get ₹500 for every admission</p>
+        </div>
 
-  <!-- Lead Inputs -->
-  <input class="input-box" id="playerName" placeholder="Your Name">
-  <input class="input-box" id="playerPhone" placeholder="WhatsApp Number">
-  <select class="input-box" id="playerCourse">
-    <option value="">Select Course</option>
-     <option>DIGITAL MARKETING</option>
-    <option>PGDCA</option>
-    <option>DCA</option>
-    <option>WEB DESIGNING</option>
-    <option>SAP FICO</option>
-    <option>Python</option>
-    <option>Accounting</option>
-  </select>
+        <!-- Referred By Badge (if came via referral) -->
+        <div id="referredBadge" class="referred-badge" style="display: none;">
+            <strong>✨ You were referred by a friend!</strong><br>
+            <small>Your friend will earn ₹500 when you join</small>
+        </div>
 
-  <!-- Wheel -->
-  <div class="wheel-box">
-    <canvas id="wheel" width="280" height="280"></canvas>
-    <button class="spin-btn" onclick="spin()">SPIN</button>
-  </div>
+        <!-- Already Played Notice -->
+        <div id="alreadyPlayed" class="already-played" style="display: none;">
+            <h3>⚠️ You've Already Played!</h3>
+            <p>Check your referral stats below or contact us on WhatsApp.</p>
+            <a href="https://wa.me/919447329972" target="_blank" class="whatsapp-btn" style="display: inline-block; margin-top: 15px;">
+                <i class="fab fa-whatsapp"></i> Contact Us
+            </a>
+        </div>
 
-  <div id="result" class="result"></div>
+        <!-- Game Form -->
+        <div id="gameForm">
+            <input class="input-box" id="playerName" placeholder="Your Full Name *" maxlength="50">
+            <div id="nameError" class="error-msg" style="display: none;"></div>
 
-  <a id="whatsappBtn" class="whatsapp-btn" target="_blank">
-    <i class="fab fa-whatsapp"></i> Claim Your Prize
-  </a>
+            <input class="input-box" id="playerPhone" placeholder="WhatsApp Number (10 digits) *" type="tel" maxlength="10">
+            <div id="phoneError" class="error-msg" style="display: none;"></div>
 
-</section>
+            <select class="input-box" id="playerCourse">
+                <option value="">Select Course of Interest *</option>
+                <option>AI Driven Digital Marketing</option>
+                <option>PGDCA</option>
+                <option>DCA</option>
+                <option>Web Designing</option>
+                <option>SAP FICO</option>
+                <option>Python Programming</option>
+                <option>Accounting (Tally GST)</option>
+                <option>Other</option>
+            </select>
+            <div id="courseError" class="error-msg" style="display: none;"></div>
 
-<footer>
-  * Offers valid after admission • One spin per student • Limited period<br>
-  © The Oxford Computers – Malayinkeezhu
-</footer>
+            <!-- Wheel -->
+            <div class="wheel-box">
+                <canvas id="wheel" width="280" height="280"></canvas>
+                <button class="spin-btn" id="spinBtn" onclick="spin()">SPIN</button>
+            </div>
 
-<script>
-const prizes=[
- "₹1000 Fee Concession",
- "₹2000 Fee Concession",
- "₹2500 Scholarship",
- "Free PSC Training (₹1500)",
- "Laptop Bag",
- "Surprise Gift Voucher",
- "₹1500 Fee Concession",
-];
+            <div id="result" class="result"></div>
 
-const canvas=document.getElementById("wheel");
-const ctx=canvas.getContext("2d");
-const size=prizes.length;
-const angle=2*Math.PI/size;
-let rot=0;
+            <a id="whatsappBtn" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Claim Your Prize Now
+            </a>
 
-function draw(){
- prizes.forEach((t,i)=>{
-  ctx.beginPath();
-  ctx.moveTo(140,140);
-  ctx.arc(140,140,140,i*angle,(i+1)*angle);
-  ctx.fillStyle=i%2?"#ff9800":"#ff5722";
-  ctx.fill();
-  ctx.save();
-  ctx.translate(140,140);
-  ctx.rotate(i*angle+angle/2);
-  ctx.fillStyle="#fff";
-  ctx.font="14px sans-serif";
-  ctx.textAlign="right";
-  ctx.fillText(t,120,5);
-  ctx.restore();
- });
-}
-draw();
+            <div class="terms-link">
+                <a href="terms.html" target="_blank">Terms & Conditions Apply</a>
+            </div>
+        </div>
 
-function spin(){
- const name=playerName.value.trim();
- const phone=playerPhone.value.trim();
- const course=playerCourse.value;
+        <!-- Referral Section (Shows after winning) -->
+        <div id="referralSection" class="referral-section">
+            <h3>🎉 Earn Extra ₹500!</h3>
+            <p>Share your unique referral link with friends. When they join any course, you get <strong>₹500 bonus</strong>!</p>
 
- if(!name||!phone||!course){
-  alert("Please fill all details");
-  return;
- }
+            <div class="referral-link-box">
+                <input type="text" id="referralLink" readonly>
+                <button class="copy-btn" id="copyBtn" onclick="copyReferralLink()">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
 
- const win=Math.floor(Math.random()*prizes.length);
- rot+=360*5+(360-(win*(360/size)));
- canvas.style.transition="transform 4s ease-out";
- canvas.style.transform=`rotate(${rot}deg)`;
+            <div class="referral-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="referralCount">0</div>
+                    <div class="stat-label">Referrals</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="earningsAmount">₹0</div>
+                    <div class="stat-label">Potential Earnings</div>
+                </div>
+            </div>
 
- setTimeout(()=>{
-  const prize=prizes[win];
-  result.innerHTML=`🎉 Congratulations ${name}!<br>You won <b>${prize}</b>`;
-  const msg=encodeURIComponent(
-`Hi Oxford Computers 👋
-I played the Oxford Win Arena.
+            <div class="share-referral-btns">
+                <a href="#" id="shareWhatsApp" class="share-ref-btn ref-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="#" id="shareFacebook" class="share-ref-btn ref-facebook" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="#" id="shareInstagram" class="share-ref-btn ref-instagram" target="_blank">
+                    <i class="fab fa-instagram"></i> Story
+                </a>
+                <a href="#" id="shareTwitter" class="share-ref-btn ref-twitter" target="_blank">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+            </div>
+
+            <p style="font-size: 12px; margin-top: 15px; opacity: 0.7;">
+                💡 Share on your social media and watch your earnings grow!
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        * All offers valid only after course admission • Referral earnings paid after friend's admission<br>
+        * One spin per person • Referral bonus: ₹500 per successful admission<br>
+        © 2026-27 The Oxford Computers – Malayinkeezhu, Trivandrum
+    </footer>
+
+    <script>
+        // ⚙️ CONFIGURATION - Replace with your Google Apps Script URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkC7z-VFwQFQxDG4kHvOy2MDdz2zECstMHVCAmK1gao33xdK4-uOKehG8EUpG2v6ih/exec';
+        
+        const prizes = [
+            "₹1000 Fee Concession",
+            "₹2000 Fee Concession",
+            "₹2500 Scholarship",
+            "Free PSC Training (₹1500)",
+            "Premium Laptop Bag",
+            "₹1500 Fee Concession",
+        ];
+
+        const canvas = document.getElementById("wheel");
+        const ctx = canvas.getContext("2d");
+        const size = prizes.length;
+        const angle = 2 * Math.PI / size;
+        let rot = 0;
+        let hasSpun = false;
+        let referrerId = null;
+
+        // Get referral ID from URL
+        function getReferralId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('ref');
+        }
+
+        // Generate unique referral ID
+        function generateReferralId(phone) {
+            return btoa(phone).substring(0, 8).toUpperCase();
+        }
+
+        // Create referral link
+        function createReferralLink(refId) {
+            const baseUrl = window.location.origin + window.location.pathname;
+            return `${baseUrl}?ref=${refId}`;
+        }
+
+        // Draw wheel
+        function draw() {
+            prizes.forEach((text, i) => {
+                ctx.beginPath();
+                ctx.moveTo(140, 140);
+                ctx.arc(140, 140, 140, i * angle, (i + 1) * angle);
+                ctx.fillStyle = i % 2 ? "#ff9800" : "#ff5722";
+                ctx.fill();
+                
+                ctx.save();
+                ctx.translate(140, 140);
+                ctx.rotate(i * angle + angle / 2);
+                ctx.fillStyle = "#fff";
+                ctx.font = "bold 13px sans-serif";
+                ctx.textAlign = "right";
+                ctx.fillText(text, 120, 5);
+                ctx.restore();
+            });
+        }
+        draw();
+
+        // Save to Google Sheets
+        async function saveToGoogleSheets(userData) {
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                });
+
+                // Note: due to CORS, we can't read the response
+                // But data is saved successfully
+                console.log('Data sent to Google Sheets');
+                return true;
+            } catch (error) {
+                console.error('Error saving to Google Sheets:', error);
+                // Continue anyway - localStorage backup exists
+                return false;
+            }
+        }
+
+        // Fetch referral stats from Google Sheets
+        async function fetchReferralStats(refId) {
+            try {
+                const response = await fetch(`${GOOGLE_SCRIPT_URL}?refId=${refId}`);
+                const data = await response.json();
+                
+                if (data.success && data.data) {
+                    return data.data;
+                }
+            } catch (error) {
+                console.error('Error fetching stats:', error);
+            }
+            
+            // Fallback to localStorage
+            return getLocalReferralStats(refId);
+        }
+
+        // Local referral stats (fallback)
+        function getLocalReferralStats(refId) {
+            const referrals = JSON.parse(localStorage.getItem('referrals_' + refId) || '[]');
+            const count = referrals.length;
+            return {
+                totalReferrals: count,
+                pendingReferrals: count,
+                totalEarnings: count * 500,
+                pendingEarnings: count * 500
+            };
+        }
+
+        // Check if user already played
+        function checkAlreadyPlayed() {
+            const played = localStorage.getItem('oxfordWinPlayed');
+            if (played === 'true') {
+                document.getElementById('gameForm').style.display = 'none';
+                document.getElementById('alreadyPlayed').style.display = 'block';
+                
+                // Show referral section if exists
+                const userData = JSON.parse(localStorage.getItem('oxfordWinData'));
+                if (userData && userData.referralId) {
+                    showReferralSection(userData);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        // Show referral section
+        async function showReferralSection(userData) {
+            const referralSection = document.getElementById('referralSection');
+            const referralLink = createReferralLink(userData.referralId);
+            
+            document.getElementById('referralLink').value = referralLink;
+            referralSection.style.display = 'block';
+            
+            // Fetch and update stats from Google Sheets
+            const stats = await fetchReferralStats(userData.referralId);
+            updateReferralStatsDisplay(stats);
+            
+            // Setup share buttons
+            setupShareButtons(referralLink, userData.name);
+        }
+
+        // Update referral stats display
+        function updateReferralStatsDisplay(stats) {
+            document.getElementById('referralCount').textContent = stats.totalReferrals || 0;
+            document.getElementById('earningsAmount').textContent = '₹' + (stats.pendingEarnings || 0);
+        }
+
+        // Track referral locally (backup)
+        function trackReferralLocal(referrerId, newUserData) {
+            if (!referrerId) return;
+            
+            const referrals = JSON.parse(localStorage.getItem('referrals_' + referrerId) || '[]');
+            referrals.push({
+                name: newUserData.name,
+                phone: newUserData.phone,
+                timestamp: new Date().toISOString()
+            });
+            localStorage.setItem('referrals_' + referrerId, JSON.stringify(referrals));
+        }
+
+        // Setup share buttons
+        function setupShareButtons(link, name) {
+            const message = `🎮 Hey! I just won a prize at Oxford Win Arena!\n\nYou can win too + I'll earn ₹500 when you join! 🎁\n\nPlay now: ${link}`;
+            
+            document.getElementById('shareWhatsApp').href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`;
+            document.getElementById('shareTwitter').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
+            
+            document.getElementById('shareInstagram').onclick = function(e) {
+                e.preventDefault();
+                copyReferralLink();
+                alert('Link copied! Paste it in your Instagram Story or Bio 📸');
+            };
+        }
+
+        // Copy referral link
+        function copyReferralLink() {
+            const linkInput = document.getElementById('referralLink');
+            linkInput.select();
+            linkInput.setSelectionRange(0, 99999); // For mobile
+            document.execCommand('copy');
+            
+            const copyBtn = document.getElementById('copyBtn');
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            copyBtn.classList.add('copied');
+            
+            setTimeout(() => {
+                copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                copyBtn.classList.remove('copied');
+            }, 2000);
+        }
+
+        // Validate inputs
+        function validateInputs() {
+            let isValid = true;
+            
+            const name = document.getElementById('playerName');
+            const nameError = document.getElementById('nameError');
+            const phone = document.getElementById('playerPhone');
+            const phoneError = document.getElementById('phoneError');
+            const course = document.getElementById('playerCourse');
+            const courseError = document.getElementById('courseError');
+
+            name.classList.remove('error');
+            phone.classList.remove('error');
+            course.classList.remove('error');
+            nameError.style.display = 'none';
+            phoneError.style.display = 'none';
+            courseError.style.display = 'none';
+
+            if (!name.value.trim() || name.value.trim().length < 3) {
+                name.classList.add('error');
+                nameError.textContent = 'Please enter your full name (min 3 characters)';
+                nameError.style.display = 'block';
+                isValid = false;
+            }
+
+            const phoneRegex = /^[6-9]\d{9}$/;
+            if (!phoneRegex.test(phone.value.trim())) {
+                phone.classList.add('error');
+                phoneError.textContent = 'Please enter a valid 10-digit mobile number';
+                phoneError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (!course.value) {
+                course.classList.add('error');
+                courseError.textContent = 'Please select a course';
+                courseError.style.display = 'block';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Spin function
+        function spin() {
+            if (checkAlreadyPlayed() || hasSpun || !validateInputs()) {
+                return;
+            }
+
+            const name = document.getElementById('playerName').value.trim();
+            const phone = document.getElementById('playerPhone').value.trim();
+            const course = document.getElementById('playerCourse').value;
+
+            const spinBtn = document.getElementById('spinBtn');
+            spinBtn.disabled = true;
+            spinBtn.textContent = 'SPINNING...';
+            hasSpun = true;
+
+            const winIndex = Math.floor(Math.random() * prizes.length);
+            rot += 360 * 5 + (360 - (winIndex * (360 / size)));
+
+            canvas.style.transition = "transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)";
+            canvas.style.transform = `rotate(${rot}deg)`;
+
+            setTimeout(() => {
+                const prize = prizes[winIndex];
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `
+                    🎉 <strong>Congratulations ${name}!</strong><br>
+                    You won: <b style="color: #ff9800;">${prize}</b>
+                `;
+
+                // Generate referral ID for this user
+                const myReferralId = generateReferralId(phone);
+
+                // Track referral locally (backup)
+                if (referrerId) {
+                    trackReferralLocal(referrerId, { name, phone, course });
+                }
+
+                // Prepare user data
+                const userData = {
+                    name, 
+                    phone, 
+                    course, 
+                    prize,
+                    referralId: myReferralId,
+                    referredBy: referrerId,
+                    timestamp: new Date().toISOString()
+                };
+
+                // Save to Google Sheets
+                saveToGoogleSheets(userData);
+
+                // Save locally (backup)
+                localStorage.setItem('oxfordWinPlayed', 'true');
+                localStorage.setItem('oxfordWinData', JSON.stringify(userData));
+
+                // WhatsApp message
+                const refBonus = referrerId ? "\n\n✨ Bonus: Your friend will earn ₹500!" : "";
+                const msg = encodeURIComponent(
+`🎮 Oxford Win Arena - Prize Claim
 
 Name: ${name}
+Phone: ${phone}
 Course: ${course}
-Prize Won: ${prize}
+Prize Won: ${prize}${refBonus}
 
-Please guide me for admission.`
-  );
-  whatsappBtn.href=`https://wa.me/919447329972?text=${msg}`;
-  whatsappBtn.style.display="block";
- },4200);
-}
-</script>
-<script>
+I'd like to claim my prize and get admission details.`
+                );
+
+                const whatsappBtn = document.getElementById('whatsappBtn');
+                whatsappBtn.href = `https://wa.me/919447329972?text=${msg}`;
+                whatsappBtn.style.display = 'block';
+
+                // Show referral section
+                setTimeout(() => {
+                    showReferralSection(userData);
+                }, 1000);
+
+                spinBtn.textContent = 'ALREADY SPUN';
+
+            }, 4200);
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            // Check for referral ID in URL
+            referrerId = getReferralId();
+            if (referrerId) {
+                document.getElementById('referredBadge').style.display = 'block';
+            }
+
+            checkAlreadyPlayed();
+        };
+    </script>
+       <script>
+        const prizes = [
+            "₹1000 Fee Concession",
+            "₹2000 Fee Concession",
+            "₹2500 Scholarship",
+            "Free PSC Training (₹1500)",
+            "Premium Laptop Bag",
+            "Food Voucher ₹500",
+            "₹1500 Fee Concession",
+        ];
+
+        const canvas = document.getElementById("wheel");
+        const ctx = canvas.getContext("2d");
+        const size = prizes.length;
+        const angle = 2 * Math.PI / size;
+        let rot = 0;
+        let hasSpun = false;
+        let referrerId = null;
+
+        // Get referral ID from URL
+        function getReferralId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('ref');
+        }
+
+        // Generate unique referral ID
+        function generateReferralId(phone) {
+            return btoa(phone).substring(0, 8).toUpperCase();
+        }
+
+        // Create referral link
+        function createReferralLink(refId) {
+            const baseUrl = window.location.origin + window.location.pathname;
+            return `${baseUrl}?ref=${refId}`;
+        }
+
+        // Draw wheel
+        function draw() {
+            prizes.forEach((text, i) => {
+                ctx.beginPath();
+                ctx.moveTo(140, 140);
+                ctx.arc(140, 140, 140, i * angle, (i + 1) * angle);
+                ctx.fillStyle = i % 2 ? "#ff9800" : "#ff5722";
+                ctx.fill();
+                
+                ctx.save();
+                ctx.translate(140, 140);
+                ctx.rotate(i * angle + angle / 2);
+                ctx.fillStyle = "#fff";
+                ctx.font = "bold 13px sans-serif";
+                ctx.textAlign = "right";
+                ctx.fillText(text, 120, 5);
+                ctx.restore();
+            });
+        }
+        draw();
+
+        // Check if user already played
+        function checkAlreadyPlayed() {
+            const played = localStorage.getItem('oxfordWinPlayed');
+            if (played === 'true') {
+                document.getElementById('gameForm').style.display = 'none';
+                document.getElementById('alreadyPlayed').style.display = 'block';
+                
+                // Show referral section if exists
+                const userData = JSON.parse(localStorage.getItem('oxfordWinData'));
+                if (userData && userData.referralId) {
+                    showReferralSection(userData);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        // Show referral section
+        function showReferralSection(userData) {
+            const referralSection = document.getElementById('referralSection');
+            const referralLink = createReferralLink(userData.referralId);
+            
+            document.getElementById('referralLink').value = referralLink;
+            referralSection.style.display = 'block';
+            
+            // Update stats
+            updateReferralStats(userData.referralId);
+            
+            // Setup share buttons
+            setupShareButtons(referralLink, userData.name);
+        }
+
+        // Update referral stats
+        function updateReferralStats(refId) {
+            const referrals = JSON.parse(localStorage.getItem('referrals_' + refId) || '[]');
+            const count = referrals.length;
+            const earnings = count * 500;
+            
+            document.getElementById('referralCount').textContent = count;
+            document.getElementById('earningsAmount').textContent = '₹' + earnings;
+        }
+
+        // Setup share buttons
+        function setupShareButtons(link, name) {
+            const message = `🎮 Hey! I just won a prize at Oxford Win Arena!\n\nYou can win too + I'll earn ₹500 when you join! 🎁\n\nPlay now: ${link}`;
+            
+            document.getElementById('shareWhatsApp').href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`;
+            document.getElementById('shareTwitter').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
+            
+            // Instagram (copy to clipboard with instructions)
+            document.getElementById('shareInstagram').onclick = function(e) {
+                e.preventDefault();
+                copyReferralLink();
+                alert('Link copied! Paste it in your Instagram Story or Bio 📸');
+            };
+        }
+
+        // Copy referral link
+        function copyReferralLink() {
+            const linkInput = document.getElementById('referralLink');
+            linkInput.select();
+            document.execCommand('copy');
+            
+            const copyBtn = document.getElementById('copyBtn');
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            copyBtn.classList.add('copied');
+            
+            setTimeout(() => {
+                copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                copyBtn.classList.remove('copied');
+            }, 2000);
+        }
+
+        // Track referral
+        function trackReferral(referrerId, newUserData) {
+            if (!referrerId) return;
+            
+            // Get existing referrals for this referrer
+            const referrals = JSON.parse(localStorage.getItem('referrals_' + referrerId) || '[]');
+            
+            // Add new referral
+            referrals.push({
+                name: newUserData.name,
+                phone: newUserData.phone,
+                timestamp: new Date().toISOString()
+            });
+            
+            // Save back
+            localStorage.setItem('referrals_' + referrerId, JSON.stringify(referrals));
+        }
+
+        // Validate inputs
+        function validateInputs() {
+            let isValid = true;
+            
+            const name = document.getElementById('playerName');
+            const nameError = document.getElementById('nameError');
+            const phone = document.getElementById('playerPhone');
+            const phoneError = document.getElementById('phoneError');
+            const course = document.getElementById('playerCourse');
+            const courseError = document.getElementById('courseError');
+
+            name.classList.remove('error');
+            phone.classList.remove('error');
+            course.classList.remove('error');
+            nameError.style.display = 'none';
+            phoneError.style.display = 'none';
+            courseError.style.display = 'none';
+
+            if (!name.value.trim() || name.value.trim().length < 3) {
+                name.classList.add('error');
+                nameError.textContent = 'Please enter your full name (min 3 characters)';
+                nameError.style.display = 'block';
+                isValid = false;
+            }
+
+            const phoneRegex = /^[6-9]\d{9}$/;
+            if (!phoneRegex.test(phone.value.trim())) {
+                phone.classList.add('error');
+                phoneError.textContent = 'Please enter a valid 10-digit mobile number';
+                phoneError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (!course.value) {
+                course.classList.add('error');
+                courseError.textContent = 'Please select a course';
+                courseError.style.display = 'block';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Spin function
+        function spin() {
+            if (checkAlreadyPlayed() || hasSpun || !validateInputs()) {
+                return;
+            }
+
+            const name = document.getElementById('playerName').value.trim();
+            const phone = document.getElementById('playerPhone').value.trim();
+            const course = document.getElementById('playerCourse').value;
+
+            const spinBtn = document.getElementById('spinBtn');
+            spinBtn.disabled = true;
+            spinBtn.textContent = 'SPINNING...';
+            hasSpun = true;
+
+            const winIndex = Math.floor(Math.random() * prizes.length);
+            rot += 360 * 5 + (360 - (winIndex * (360 / size)));
+
+            canvas.style.transition = "transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)";
+            canvas.style.transform = `rotate(${rot}deg)`;
+
+            setTimeout(() => {
+                const prize = prizes[winIndex];
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `
+                    🎉 <strong>Congratulations ${name}!</strong><br>
+                    You won: <b style="color: #ff9800;">${prize}</b>
+                `;
+
+                // Generate referral ID for this user
+                const myReferralId = generateReferralId(phone);
+
+                // Track if came via referral
+                if (referrerId) {
+                    trackReferral(referrerId, { name, phone, course });
+                }
+
+                // WhatsApp message
+                const refBonus = referrerId ? "\n\n✨ Bonus: Your friend will earn ₹500!" : "";
+                const msg = encodeURIComponent(
+`🎮 Oxford Win Arena - Prize Claim
+
+Name: ${name}
+Phone: ${phone}
+Course: ${course}
+Prize Won: ${prize}${refBonus}
+
+I'd like to claim my prize and get admission details.`
+                );
+
+                const whatsappBtn = document.getElementById('whatsappBtn');
+                whatsappBtn.href = `https://wa.me/919447329972?text=${msg}`;
+                whatsappBtn.style.display = 'block';
+
+                // Save user data
+                const userData = {
+                    name, phone, course, prize,
+                    referralId: myReferralId,
+                    referredBy: referrerId,
+                    timestamp: new Date().toISOString()
+                };
+
+                localStorage.setItem('oxfordWinPlayed', 'true');
+                localStorage.setItem('oxfordWinData', JSON.stringify(userData));
+
+                // Show referral section
+                setTimeout(() => {
+                    showReferralSection(userData);
+                }, 1000);
+
+                spinBtn.textContent = 'ALREADY SPUN';
+
+            }, 4200);
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            // Check for referral ID in URL
+            referrerId = getReferralId();
+            if (referrerId) {
+                document.getElementById('referredBadge').style.display = 'block';
+            }
+
+            checkAlreadyPlayed();
+        };
+    </script>
+
+    <script>
+/* Disable Right Click */
 document.addEventListener('contextmenu', e => e.preventDefault());
 
-document.addEventListener('keydown', function(e) {
+/* Disable Common DevTools Shortcuts */
+document.addEventListener('keydown', function (e) {
     if (
-        e.keyCode === 123 || // F12
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
-        (e.ctrlKey && e.key === 'U')
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key)) ||
+        (e.ctrlKey && e.key === "U")
     ) {
         e.preventDefault();
+        return false;
     }
 });
+
+/* DevTools Detection (Soft Lock) */
+(function() {
+    let devtoolsOpen = false;
+    const threshold = 160;
+
+    setInterval(() => {
+        if (
+            window.outerWidth - window.innerWidth > threshold ||
+            window.outerHeight - window.innerHeight > threshold
+        ) {
+            if (!devtoolsOpen) {
+                devtoolsOpen = true;
+                document.body.innerHTML = `
+                  <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#000;color:#fff;text-align:center;">
+                    <div>
+                      <h2>⚠️ Developer Tools Detected</h2>
+                      <p>This page is protected.</p>
+                    </div>
+                  </div>`;
+            }
+        }
+    }, 1000);
+})();
 </script>
 
 </body>
