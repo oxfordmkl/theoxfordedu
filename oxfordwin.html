@@ -141,7 +141,7 @@
             outline: none;
             font-size: 15px;
             background: rgba(255, 255, 255, 0.08);
-            color: #108b31;
+            color: #fff;
             transition: all 0.3s ease;
         }
 
@@ -156,6 +156,12 @@
 
         select.input-box {
             cursor: pointer;
+            color: #fff;
+        }
+
+        select.input-box option {
+            background: #1a1a2e;
+            color: #fff;
         }
 
         .error {
@@ -441,6 +447,23 @@
             font-size: 14px;
         }
 
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #00e5ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         @media (max-width: 480px) {
             .arena {
                 margin: 20px 15px;
@@ -532,6 +555,7 @@
                 <button class="spin-btn" id="spinBtn" onclick="spin()">SPIN</button>
             </div>
 
+            <div class="spinner" id="spinner"></div>
             <div id="result" class="result"></div>
 
             <a id="whatsappBtn" class="whatsapp-btn" target="_blank">
@@ -652,32 +676,57 @@
         }
         draw();
 
-        // Save to Google Sheets
-        async function saveToGoogleSheets(userData) {
+        // Save to Google Sheets with proper error handling
+        async function saveToGoogleSheets(data) {
+            const spinner = document.getElementById('spinner');
+            
             try {
+                spinner.style.display = 'block';
+                
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
+                    method: "POST",
+                    mode: 'no-cors', // Important for Google Apps Script
                     headers: {
-                        'Content-Type': 'application/json'
+                        "Content-Type": "application/json"
                     },
-                    body: JSON.stringify(userData)
+                    body: JSON.stringify(data)
                 });
-
-                // Note: due to CORS, we can't read the response
-                // But data is saved successfully
+                
+                spinner.style.display = 'none';
+                
+                // With no-cors mode, we can't read the response
+                // So we assume success if no error was thrown
                 console.log('Data sent to Google Sheets');
                 return true;
+                
             } catch (error) {
-                console.error('Error saving to Google Sheets:', error);
-                // Continue anyway - localStorage backup exists
+                spinner.style.display = 'none';
+                console.error("Error saving to Google Sheets:", error);
+                
+                // Still save to localStorage as backup
+                saveToLocalStorage(data);
                 return false;
+            }
+        }
+
+        // Save to localStorage as backup
+        function saveToLocalStorage(data) {
+            try {
+                const allData = JSON.parse(localStorage.getItem('oxfordWinAllData') || '[]');
+                allData.push(data);
+                localStorage.setItem('oxfordWinAllData', JSON.stringify(allData));
+            } catch (e) {
+                console.error('LocalStorage error:', e);
             }
         }
 
         // Fetch referral stats from Google Sheets
         async function fetchReferralStats(refId) {
             try {
-                const response = await fetch(`${GOOGLE_SCRIPT_URL}?refId=${refId}`);
+                const response = await fetch(`${GOOGLE_SCRIPT_URL}?refId=${refId}`, {
+                    method: 'GET'
+                });
+                
                 const data = await response.json();
                 
                 if (data.success && data.data) {
@@ -693,14 +742,25 @@
 
         // Local referral stats (fallback)
         function getLocalReferralStats(refId) {
-            const referrals = JSON.parse(localStorage.getItem('referrals_' + refId) || '[]');
-            const count = referrals.length;
-            return {
-                totalReferrals: count,
-                pendingReferrals: count,
-                totalEarnings: count * 500,
-                pendingEarnings: count * 500
-            };
+            try {
+                const allData = JSON.parse(localStorage.getItem('oxfordWinAllData') || '[]');
+                const referrals = allData.filter(item => item.referredBy === refId);
+                const count = referrals.length;
+                
+                return {
+                    totalReferrals: count,
+                    pendingReferrals: count,
+                    totalEarnings: count * 500,
+                    pendingEarnings: count * 500
+                };
+            } catch (e) {
+                return {
+                    totalReferrals: 0,
+                    pendingReferrals: 0,
+                    totalEarnings: 0,
+                    pendingEarnings: 0
+                };
+            }
         }
 
         // Check if user already played
@@ -711,7 +771,7 @@
                 document.getElementById('alreadyPlayed').style.display = 'block';
                 
                 // Show referral section if exists
-                const userData = JSON.parse(localStorage.getItem('oxfordWinData'));
+                const userData = JSON.parse(localStorage.getItem('oxfordWinData') || '{}');
                 if (userData && userData.referralId) {
                     showReferralSection(userData);
                 }
@@ -728,7 +788,7 @@
             document.getElementById('referralLink').value = referralLink;
             referralSection.style.display = 'block';
             
-            // Fetch and update stats from Google Sheets
+            // Fetch and update stats
             const stats = await fetchReferralStats(userData.referralId);
             updateReferralStatsDisplay(stats);
             
@@ -742,19 +802,6 @@
             document.getElementById('earningsAmount').textContent = '₹' + (stats.pendingEarnings || 0);
         }
 
-        // Track referral locally (backup)
-        function trackReferralLocal(referrerId, newUserData) {
-            if (!referrerId) return;
-            
-            const referrals = JSON.parse(localStorage.getItem('referrals_' + referrerId) || '[]');
-            referrals.push({
-                name: newUserData.name,
-                phone: newUserData.phone,
-                timestamp: new Date().toISOString()
-            });
-            localStorage.setItem('referrals_' + referrerId, JSON.stringify(referrals));
-        }
-
         // Setup share buttons
         function setupShareButtons(link, name) {
             const message = `🎮 Hey! I just won a prize at Oxford Win Arena!\n\nYou can win too + I'll earn ₹500 when you join! 🎁\n\nPlay now: ${link}`;
@@ -774,17 +821,23 @@
         function copyReferralLink() {
             const linkInput = document.getElementById('referralLink');
             linkInput.select();
-            linkInput.setSelectionRange(0, 99999); // For mobile
-            document.execCommand('copy');
+            linkInput.setSelectionRange(0, 99999);
             
-            const copyBtn = document.getElementById('copyBtn');
-            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            copyBtn.classList.add('copied');
-            
-            setTimeout(() => {
-                copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
-                copyBtn.classList.remove('copied');
-            }, 2000);
+            try {
+                document.execCommand('copy');
+                
+                const copyBtn = document.getElementById('copyBtn');
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Copy failed:', err);
+                alert('Please manually copy the link');
+            }
         }
 
         // Validate inputs
@@ -831,7 +884,7 @@
         }
 
         // Spin function
-        function spin() {
+        async function spin() {
             if (checkAlreadyPlayed() || hasSpun || !validateInputs()) {
                 return;
             }
@@ -851,7 +904,7 @@
             canvas.style.transition = "transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)";
             canvas.style.transform = `rotate(${rot}deg)`;
 
-            setTimeout(() => {
+            setTimeout(async () => {
                 const prize = prizes[winIndex];
                 const resultDiv = document.getElementById('result');
                 resultDiv.innerHTML = `
@@ -861,11 +914,6 @@
 
                 // Generate referral ID for this user
                 const myReferralId = generateReferralId(phone);
-
-                // Track referral locally (backup)
-                if (referrerId) {
-                    trackReferralLocal(referrerId, { name, phone, course });
-                }
 
                 // Prepare user data
                 const userData = {
@@ -874,14 +922,14 @@
                     course, 
                     prize,
                     referralId: myReferralId,
-                    referredBy: referrerId,
+                    referredBy: referrerId || 'Direct',
                     timestamp: new Date().toISOString()
                 };
 
-                // Save to Google Sheets
+                // Save to Google Sheets (async, don't wait)
                 saveToGoogleSheets(userData);
 
-                // Save locally (backup)
+                // Save locally
                 localStorage.setItem('oxfordWinPlayed', 'true');
                 localStorage.setItem('oxfordWinData', JSON.stringify(userData));
 
@@ -923,284 +971,7 @@ I'd like to claim my prize and get admission details.`
             checkAlreadyPlayed();
         };
     </script>
-       <script>
-        const prizes = [
-            "₹1000 Fee Concession",
-            "₹2000 Fee Concession",
-            "₹2500 Scholarship",
-            "Free PSC Training (₹1500)",
-            "Premium Laptop Bag",
-            "Food Voucher ₹500",
-            "₹1500 Fee Concession",
-        ];
 
-        const canvas = document.getElementById("wheel");
-        const ctx = canvas.getContext("2d");
-        const size = prizes.length;
-        const angle = 2 * Math.PI / size;
-        let rot = 0;
-        let hasSpun = false;
-        let referrerId = null;
-
-        // Get referral ID from URL
-        function getReferralId() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('ref');
-        }
-
-        // Generate unique referral ID
-        function generateReferralId(phone) {
-            return btoa(phone).substring(0, 8).toUpperCase();
-        }
-
-        // Create referral link
-        function createReferralLink(refId) {
-            const baseUrl = window.location.origin + window.location.pathname;
-            return `${baseUrl}?ref=${refId}`;
-        }
-
-        // Draw wheel
-        function draw() {
-            prizes.forEach((text, i) => {
-                ctx.beginPath();
-                ctx.moveTo(140, 140);
-                ctx.arc(140, 140, 140, i * angle, (i + 1) * angle);
-                ctx.fillStyle = i % 2 ? "#ff9800" : "#ff5722";
-                ctx.fill();
-                
-                ctx.save();
-                ctx.translate(140, 140);
-                ctx.rotate(i * angle + angle / 2);
-                ctx.fillStyle = "#fff";
-                ctx.font = "bold 13px sans-serif";
-                ctx.textAlign = "right";
-                ctx.fillText(text, 120, 5);
-                ctx.restore();
-            });
-        }
-        draw();
-
-        // Check if user already played
-        function checkAlreadyPlayed() {
-            const played = localStorage.getItem('oxfordWinPlayed');
-            if (played === 'true') {
-                document.getElementById('gameForm').style.display = 'none';
-                document.getElementById('alreadyPlayed').style.display = 'block';
-                
-                // Show referral section if exists
-                const userData = JSON.parse(localStorage.getItem('oxfordWinData'));
-                if (userData && userData.referralId) {
-                    showReferralSection(userData);
-                }
-                return true;
-            }
-            return false;
-        }
-
-        // Show referral section
-        function showReferralSection(userData) {
-            const referralSection = document.getElementById('referralSection');
-            const referralLink = createReferralLink(userData.referralId);
-            
-            document.getElementById('referralLink').value = referralLink;
-            referralSection.style.display = 'block';
-            
-            // Update stats
-            updateReferralStats(userData.referralId);
-            
-            // Setup share buttons
-            setupShareButtons(referralLink, userData.name);
-        }
-
-        // Update referral stats
-        function updateReferralStats(refId) {
-            const referrals = JSON.parse(localStorage.getItem('referrals_' + refId) || '[]');
-            const count = referrals.length;
-            const earnings = count * 500;
-            
-            document.getElementById('referralCount').textContent = count;
-            document.getElementById('earningsAmount').textContent = '₹' + earnings;
-        }
-
-        // Setup share buttons
-        function setupShareButtons(link, name) {
-            const message = `🎮 Hey! I just won a prize at Oxford Win Arena!\n\nYou can win too + I'll earn ₹500 when you join! 🎁\n\nPlay now: ${link}`;
-            
-            document.getElementById('shareWhatsApp').href = `https://wa.me/?text=${encodeURIComponent(message)}`;
-            document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`;
-            document.getElementById('shareTwitter').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
-            
-            // Instagram (copy to clipboard with instructions)
-            document.getElementById('shareInstagram').onclick = function(e) {
-                e.preventDefault();
-                copyReferralLink();
-                alert('Link copied! Paste it in your Instagram Story or Bio 📸');
-            };
-        }
-
-        // Copy referral link
-        function copyReferralLink() {
-            const linkInput = document.getElementById('referralLink');
-            linkInput.select();
-            document.execCommand('copy');
-            
-            const copyBtn = document.getElementById('copyBtn');
-            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            copyBtn.classList.add('copied');
-            
-            setTimeout(() => {
-                copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
-                copyBtn.classList.remove('copied');
-            }, 2000);
-        }
-
-        // Track referral
-        function trackReferral(referrerId, newUserData) {
-            if (!referrerId) return;
-            
-            // Get existing referrals for this referrer
-            const referrals = JSON.parse(localStorage.getItem('referrals_' + referrerId) || '[]');
-            
-            // Add new referral
-            referrals.push({
-                name: newUserData.name,
-                phone: newUserData.phone,
-                timestamp: new Date().toISOString()
-            });
-            
-            // Save back
-            localStorage.setItem('referrals_' + referrerId, JSON.stringify(referrals));
-        }
-
-        // Validate inputs
-        function validateInputs() {
-            let isValid = true;
-            
-            const name = document.getElementById('playerName');
-            const nameError = document.getElementById('nameError');
-            const phone = document.getElementById('playerPhone');
-            const phoneError = document.getElementById('phoneError');
-            const course = document.getElementById('playerCourse');
-            const courseError = document.getElementById('courseError');
-
-            name.classList.remove('error');
-            phone.classList.remove('error');
-            course.classList.remove('error');
-            nameError.style.display = 'none';
-            phoneError.style.display = 'none';
-            courseError.style.display = 'none';
-
-            if (!name.value.trim() || name.value.trim().length < 3) {
-                name.classList.add('error');
-                nameError.textContent = 'Please enter your full name (min 3 characters)';
-                nameError.style.display = 'block';
-                isValid = false;
-            }
-
-            const phoneRegex = /^[6-9]\d{9}$/;
-            if (!phoneRegex.test(phone.value.trim())) {
-                phone.classList.add('error');
-                phoneError.textContent = 'Please enter a valid 10-digit mobile number';
-                phoneError.style.display = 'block';
-                isValid = false;
-            }
-
-            if (!course.value) {
-                course.classList.add('error');
-                courseError.textContent = 'Please select a course';
-                courseError.style.display = 'block';
-                isValid = false;
-            }
-
-            return isValid;
-        }
-
-        // Spin function
-        function spin() {
-            if (checkAlreadyPlayed() || hasSpun || !validateInputs()) {
-                return;
-            }
-
-            const name = document.getElementById('playerName').value.trim();
-            const phone = document.getElementById('playerPhone').value.trim();
-            const course = document.getElementById('playerCourse').value;
-
-            const spinBtn = document.getElementById('spinBtn');
-            spinBtn.disabled = true;
-            spinBtn.textContent = 'SPINNING...';
-            hasSpun = true;
-
-            const winIndex = Math.floor(Math.random() * prizes.length);
-            rot += 360 * 5 + (360 - (winIndex * (360 / size)));
-
-            canvas.style.transition = "transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)";
-            canvas.style.transform = `rotate(${rot}deg)`;
-
-            setTimeout(() => {
-                const prize = prizes[winIndex];
-                const resultDiv = document.getElementById('result');
-                resultDiv.innerHTML = `
-                    🎉 <strong>Congratulations ${name}!</strong><br>
-                    You won: <b style="color: #ff9800;">${prize}</b>
-                `;
-
-                // Generate referral ID for this user
-                const myReferralId = generateReferralId(phone);
-
-                // Track if came via referral
-                if (referrerId) {
-                    trackReferral(referrerId, { name, phone, course });
-                }
-
-                // WhatsApp message
-                const refBonus = referrerId ? "\n\n✨ Bonus: Your friend will earn ₹500!" : "";
-                const msg = encodeURIComponent(
-`🎮 Oxford Win Arena - Prize Claim
-
-Name: ${name}
-Phone: ${phone}
-Course: ${course}
-Prize Won: ${prize}${refBonus}
-
-I'd like to claim my prize and get admission details.`
-                );
-
-                const whatsappBtn = document.getElementById('whatsappBtn');
-                whatsappBtn.href = `https://wa.me/919447329972?text=${msg}`;
-                whatsappBtn.style.display = 'block';
-
-                // Save user data
-                const userData = {
-                    name, phone, course, prize,
-                    referralId: myReferralId,
-                    referredBy: referrerId,
-                    timestamp: new Date().toISOString()
-                };
-
-                localStorage.setItem('oxfordWinPlayed', 'true');
-                localStorage.setItem('oxfordWinData', JSON.stringify(userData));
-
-                // Show referral section
-                setTimeout(() => {
-                    showReferralSection(userData);
-                }, 1000);
-
-                spinBtn.textContent = 'ALREADY SPUN';
-
-            }, 4200);
-        }
-
-        // Initialize on page load
-        window.onload = function() {
-            // Check for referral ID in URL
-            referrerId = getReferralId();
-            if (referrerId) {
-                document.getElementById('referredBadge').style.display = 'block';
-            }
-
-            checkAlreadyPlayed();
-        };
-    </script>
 
     <script>
 /* Disable Right Click */
