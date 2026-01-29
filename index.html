@@ -31,6 +31,54 @@
     align-items: center;
     padding: 0 20px;
 }
+
+.reviews-section reveal {
+  background: #0f172a;
+  padding: 40px;
+  border-radius: 16px;
+  color: #000;
+}
+
+.reviews-header {
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.score {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.stars {
+  color: #fbbc05;
+}
+
+.review-btn {
+  background: #1a73e8;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.news-ticker {
+  background: #1a73e8;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 15px;
+}
+
+
 </style>
 
     
@@ -136,7 +184,7 @@
         <div style="display: flex; gap: 15px; align-items: center;">
             
             <button class="cta-btn" id="ctaAnim" aria-label="Get Started with The Oxford Computers">
-             <a href="oxfordwin.html" target="_blank"> <span class="text-xl" aria-hidden="true">Play & Win</span></a>
+             <a href="oxfordwin.html" target="_blank"> <span class="text-xl" aria-hidden="true">Spin & Win</span></a>
             </button>
         </div>
        <div class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -163,6 +211,11 @@
 The Oxford Computers is a Kerala State Rutronix approved computer institute in Malayinkeezhu, Trivandrum offering PGDCA, DCA, Python, AI Digital Marketing and Accounting courses.
 </p>
 <section class="local-seo">
+    <div class="news-ticker">
+  🗞️ <strong>Latest News:</strong>
+  ദി ഓക്സ്ഫോർഡ് കംപ്യൂട്ടേഴ്സിൽ കേരളാ സ്റ്റേറ്റ് റൂട്രോണിക്സിന്റെ  രജിസ്ട്രേഷൻ നടപടികൾ പൂർത്തിയാക്കി പഠിക്കുന്ന ഉദ്യോഗാർത്ഥികൾക്കായി,CM's Connect to Work പദ്ധതി പ്രകാരം മാസം 1000 രൂപ സ്റ്റൈഫന്റ് ലഭിക്കുന്നതാണ്.
+</div>
+
   <div class="local-container">
 
     <h2>Best Computer Institute in Malayinkeezhu, Trivandrum</h2>
@@ -193,7 +246,7 @@ The Oxford Computers is a Kerala State Rutronix approved computer institute in M
         <i class="fas fa-user-graduate"></i>
         <h3>Trusted by Nearby Towns</h3>
         <p>
-          Students from Neyyattinkara, Balaramapuram, Kattakada and nearby
+          Students from Kattakada, Neyyattinkara, Balaramapuram, Pappanamcode and nearby
           areas choose us for quality education.
         </p>
       </div>
@@ -202,12 +255,44 @@ The Oxford Computers is a Kerala State Rutronix approved computer institute in M
   </div>
 </section>
 
-   <!-- ✅ Fixed: Single section with proper grid -->
+
+
+    <!-- About Section -->
+
+<section class="about-section reveal" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>
+                    Oxford Computers, Malayinkeezhu is a government-approved computer training institute offering career-focused IT courses with practical training, expert guidance, and industry-relevant skills to help students succeed in today’s digital world.
+                <a href="about.html"><button class="course-btn read-more-btn" >Read More</button></a>
+                </p>
+
+ 
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">Vision</div>
+                    <div class="stat-label">Empowering students with practical digital skills to build successful careers in technology.</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">Mission</div>
+                    <div class="stat-label">Delivering industry-oriented, government-approved computer education through hands-on training, expert mentorship, and career-focused learning.</div>
+                </div>
+                
+            </div>
+   </div>
+    </section>
+
+    <!-- Courses Section -->
+<!-- ✅ Fixed: Single section with proper grid -->
 <section class="courses-section reveal" id="courses">
     <div class="section-header">
         <div class="section-badge">OUR COURSES</div>
         <h2>Explore Our Popular Courses</h2>
-        <p>Industry-focused programs designed to equip you with in-demand skills for today's job market</p>
+        <p>Industry-focused programs designed to equip you with in-demand skills for today's job market
+       
+        </p>
     </div>
 
     <div class="courses-grid">
@@ -354,11 +439,28 @@ The Oxford Computers is a Kerala State Rutronix approved computer institute in M
 
     </div>
 </section>
-
+<!-- Google Reviews Section -->
 
 
     <!-- Reviews Section -->
 <section class="reviews-section reveal" id="reviews">
+
+    <div class="reviews-header">
+    <div class="left">
+      <img src="assets/images/google-logo.png" alt="Google" width="50" height="50"/>
+      <h3 style="color: #25210a;">Google Reviews</h3>
+      <div class="rating">
+        <span style="color: #25210a;">4.9</span>
+        <span class="stars">★★★★★</span>
+        <span style="color: #25210a;">(120)</span>
+      </div>
+    </div>
+
+    <a href="https://g.page/r/CTLGp4P09cviEBM/review" target="_blank" class="review-btn">
+      Review us on Google
+    </a>
+  </div>
+
     <div class="section-header">
         <div class="section-badge">STUDENT REVIEWS</div>
         <h2>What Our Students Say</h2>
@@ -383,13 +485,13 @@ The Oxford Computers is a Kerala State Rutronix approved computer institute in M
         <div class="review-card">
             <div class="review-stars">★★★★★</div>
             <p class="review-text">
-                “Best computer institute in Trivandrum. I got placed within 2 months after completing DCA.”
+                “The Oxford computers is Government authorised computer centre in Malayinkeezhu. Women owned, good staffing.Very good experience, experienced faculties, good atmosphere.”
             </p>
             <div class="review-user">
                 <div class="avatar">S</div>
                 <div>
-                    <h4>Shyam K</h4>
-                    <span>DCA Graduate</span>
+                    <h4>Kiran J A</h4>
+                    <span>AiDM Student</span>
                 </div>
             </div>
         </div>
@@ -397,13 +499,13 @@ The Oxford Computers is a Kerala State Rutronix approved computer institute in M
         <div class="review-card">
             <div class="review-stars">★★★★★</div>
             <p class="review-text">
-                “Very good teaching style and real-world projects. Highly recommended for Python learners.”
+                “Best computer class. All good facilities and nyc atmosphere. Very friendly teachers.This is perfect institute for those who want start their new career life. thank u Oxford.”
             </p>
             <div class="review-user">
                 <div class="avatar">M</div>
                 <div>
-                    <h4>Manu P</h4>
-                    <span>Python Course</span>
+                    <h4>Bhadra</h4>
+                    <span>PGDCA Student</span>
                 </div>
             </div>
         </div>
@@ -417,7 +519,7 @@ The Oxford Computers is a Kerala State Rutronix approved computer institute in M
                 <div class="avatar">A</div>
                 <div>
                     <h4>Vipin </h4>
-                    <span>Full Stack Student</span>
+                    <span>Python Student</span>
                 </div>
             </div>
         </div>
