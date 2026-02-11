@@ -122,8 +122,16 @@
 }
 </script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CPGHZZLXF">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-</head>
+  gtag('config', 'G-5CPGHZZLXF');
+</script>
 <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -152,7 +160,10 @@
             </div>
             
             <div class="modal-footer">
-                <a href="https://wa.me/919447329972" target="_blank" class="modal-btn modal-btn-primary">
+                <a href="https://wa.me/919447329972" target="_blank" class="modal-btn modal-btn-primary"  onclick="gtag('event','whatsapp_click',{
+     event_category:'Lead',
+     event_label:'Homepage'
+   });">
                     <i class="fab fa-whatsapp"></i> Enroll Now
                 </a>
                 <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Close</button>
@@ -622,7 +633,7 @@ The Oxford Computers is a Kerala State Rutronix approved computer institute in M
                 <a href="https://www.facebook.com/oxfordtvm" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/oxfordmkl" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/company/the-oxford-computers" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/919447329972" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://wa.me/919447329972" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp" ></i></a>
             </div>
         </div>
 
